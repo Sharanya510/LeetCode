@@ -8,6 +8,8 @@ class Solution:
             elif nums[mid] == nums[left] == nums[right]:
                 left = left + 1
                 right = right - 1
+            
+            #left-sided portion
             elif nums[left] <= nums[mid]:
                 if target > nums[mid] or target < nums[left]:
                     left = mid + 1
