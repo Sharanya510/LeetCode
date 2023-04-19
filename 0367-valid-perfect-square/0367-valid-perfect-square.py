@@ -16,4 +16,5 @@ class Solution:
                 left = mid+1
             else:
                 return True
+        return False
         
