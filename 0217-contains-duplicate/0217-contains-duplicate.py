@@ -11,14 +11,24 @@ class Solution:
         # return len(set(nums)) != len(nums)
         
         #using a set DS
-        nums_set = set()
+        # nums_set = set()
+        # for i in nums:
+        #     if i in nums_set:
+        #         return True
+        #     else:
+        #         nums_set.add(i)
+        # return False
+        
+        #using a hashmap
+        nums_hash = {}
         for i in nums:
-            if i in nums_set:
+            if i not in nums_hash:
+                nums_hash[i] = 0
+            nums_hash[i] += 1
+        for i , freq in nums_hash.items():
+            if freq > 1:
                 return True
-            else:
-                nums_set.add(i)
         return False
-                
         
         
                
