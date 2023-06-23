@@ -19,20 +19,3 @@ class Solution:
         return self.TreeToList(root.left) + [root.val] + self.TreeToList(root.right)
         
         
-        
-        
-        
-        
-        # stack = []
-        # curr = root
-        # n = 0
-        # while curr or stack:
-        #     while curr:
-        #         stack.append(curr)
-        #         curr = curr.left
-        #     curr = stack.pop()
-        #     n += 1
-        #     if n == 2:
-        #         return curr.val
-        #     curr = curr.right
-        
