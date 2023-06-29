@@ -9,15 +9,15 @@ class Solution:
             while k < j:
                 b = nums[k]
                 c = nums[j]
-                if a + b + c == 0:
+                if a + b + c < 0:
+                    k += 1
+                elif a + b + c > 0:
+                    j -= 1
+                else:
                     if [a,b,c] not in res:
                         res.append([a,b,c])
                     k += 1
                     j -= 1
-                elif a + b + c > 0:
-                    j -= 1
-                else:
-                    k += 1
         return res
     
     
