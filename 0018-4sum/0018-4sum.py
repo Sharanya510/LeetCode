@@ -20,13 +20,9 @@ class Solution:
                         res.append((a,b,c,d))
                         start += 1
                         end -= 1
-        print(res)
-        print(set(res))
-        print(list(set(res)))
+        
         for e in (set(res)):
-            print(e)
-            ans.append(list(e))
-                        
+            ans.append(list(e))       
         return ans
                     
                     
