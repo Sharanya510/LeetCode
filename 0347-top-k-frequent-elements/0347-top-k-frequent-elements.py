@@ -33,10 +33,10 @@ class Solution:
                 nums_hash[num]=1
             else:
                 nums_hash[num]+=1
-        s = sorted(nums_hash, key = lambda x:nums_hash[x])
-        s.reverse()
-        s= s[:k]
-        return s
+        s = sorted(nums_hash, key = lambda x:nums_hash[x], reverse = True)
+        # s.reverse()
+        # s= s[:k]
+        return s[:k]
 
             
                 
