@@ -17,19 +17,19 @@ class Solution:
         # return False
         
         #USING COUNTER FUNCTION
-        freq = Counter(nums)
-        for num, freq in freq.items():
+        # freq = Counter(nums)
+        # for num, freq in freq.items():
+        #     if freq > 1:
+        #         return True
+        # return False
+        
+        #HASHMAP
+        nums_hash = {}
+        for num in nums:
+            if num not in nums_hash:
+                nums_hash[num] = 0
+            nums_hash[num] += 1
+        for num, freq in nums_hash.items():
             if freq > 1:
                 return True
         return False
-        
-        
-        
-        
-        # nums_hash = {}
-        # for i, n in enumerate(nums):
-        #     if n not in nums_hash:
-        #         nums[i] += n
-        #     elif nums[i] >= 2:
-        #         return True
-        # return False
