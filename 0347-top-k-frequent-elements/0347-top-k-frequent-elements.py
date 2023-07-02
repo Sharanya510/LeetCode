@@ -1,5 +1,7 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        
+        # TIME COMPLEXITY -- nlog(k) : log k is for heap complexity, insertion or deletion time and doing this for n elements, hence n log(k)
         nums_hash =  {}
         res = []
         for i, n in enumerate(nums):
