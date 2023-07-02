@@ -34,8 +34,6 @@ class Solution:
             else:
                 nums_hash[num]+=1
         s = sorted(nums_hash, key = lambda x:nums_hash[x], reverse = True)
-        # s.reverse()
-        # s= s[:k]
         return s[:k]
 
             
