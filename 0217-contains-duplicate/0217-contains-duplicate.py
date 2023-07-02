@@ -24,12 +24,17 @@ class Solution:
         # return False
         
         #HASHMAP
-        nums_hash = {}
-        for num in nums:
-            if num not in nums_hash:
-                nums_hash[num] = 0
-            nums_hash[num] += 1
-        for num, freq in nums_hash.items():
-            if freq > 1:
-                return True
-        return False
+        # nums_hash = {}
+        # for num in nums:
+        #     if num not in nums_hash:
+        #         nums_hash[num] = 0
+        #     nums_hash[num] += 1
+        # for num, freq in nums_hash.items():
+        #     if freq > 1:
+        #         return True
+        # return False
+        
+        #USING SET
+        return len(set(nums)) != len(nums)
+        
+        
