@@ -24,4 +24,15 @@ class Solution:
 #         for key, value in d.items():
 #             res.append(value)
 #         return res
+
+
+        # THIRD APPROACH
+        # ans = {}
+        # for s in strs:
+        #     key = tuple(sorted(s))
+        #     if key in ans:
+        #         ans[key].append(s)
+        #     else:
+        #         ans[key] = [s]
+        # return list(ans.values())
         
