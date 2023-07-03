@@ -8,6 +8,5 @@ class Solution:
                 res -= d[s[i]]
             else:
                 res += d[s[i]]
-        print(res)
         return res
         
