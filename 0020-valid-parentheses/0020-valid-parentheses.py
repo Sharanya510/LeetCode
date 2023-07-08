@@ -15,11 +15,6 @@ class Solution:
                 my_stack.append(c)
         return not my_stack
         
-        
-        
-        
-        
-        
         # my_stack = []
         # for c in s:
         #     if c == '{' :
