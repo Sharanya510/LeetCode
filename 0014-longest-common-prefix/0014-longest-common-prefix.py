@@ -1,7 +1,5 @@
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        if len(strs) == 1 or strs[0] == "":
-            return strs[0]
         
         res = ""
         for i in range(len(strs[0])):
