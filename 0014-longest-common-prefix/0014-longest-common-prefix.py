@@ -3,9 +3,8 @@ class Solution:
         if len(strs) == 1:
             return strs[0]
         
-        strs.sort()
+        # strs.sort()
         res = []
-        # print(strs)
         for i in range(len(strs)-1):
             temp = ""
             for j in range(min(len(strs[i]),len(strs[i+1]))):
