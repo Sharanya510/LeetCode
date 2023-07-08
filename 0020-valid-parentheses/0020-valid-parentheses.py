@@ -5,7 +5,10 @@ class Solution:
         
         for c in s:
             if c in mapping:
-                top = my_stack.pop() if my_stack else '#'
+                if my_stack:
+                    top = my_stack.pop() 
+                else:
+                    return False
                 if mapping[c] != top:
                     return False
             else:
