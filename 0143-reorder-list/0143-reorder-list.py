@@ -27,15 +27,7 @@ class Solution:
             second_head.next = first_head
             second_head = next_second
         return dummy_node.next          
-  #  1 2 3 4 
-            
-#   -1     1 2->none 
-#          4 3->none
 
-# 1->4->2->3->none
-
-#          1 4  
-    
     def midpoint(self, head):
         slow = head
         fast = head
@@ -55,9 +47,14 @@ class Solution:
             prev = temp
             temp = curr
         return prev
+     
+        #  1 2 3 4 
             
-        
-            
-            
-        
-        
+#   -1     1 2->none 
+#          4 3->none
+
+# 1->4->2->3->none
+
+#          1 4  
+    
+             
