@@ -19,7 +19,7 @@ class Solution:
         temp_list.sort()
         
         dummy_node = ListNode(-1)
-        print(temp_list)
+        # print(temp_list)
         
         if temp_list:
             curr = ListNode(temp_list[0])
