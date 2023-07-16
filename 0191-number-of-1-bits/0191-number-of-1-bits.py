@@ -17,6 +17,10 @@ class Solution:
                 count += 1
             n = n >> 1
         return count
+    
+    # 1010 = 10
+    # right == 0101 == 5
+    # left == 10100 = 20
         
         # BRUTE FORCE METHOD 2
         # n = bin(n)
