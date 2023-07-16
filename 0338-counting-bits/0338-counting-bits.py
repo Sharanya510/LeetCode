@@ -13,6 +13,8 @@ class Solution:
         for i in range(1, n+1):
             res[i] = helper(i)
         return res
+    
+        # res = [0] * (n + 1)
         # for i in range(0, n+1, 2):
         #     res[i] = helper(i)
         #     res[i+1] = res[i] + 1
