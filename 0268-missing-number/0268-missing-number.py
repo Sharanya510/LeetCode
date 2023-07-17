@@ -1,13 +1,20 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        res=0
-        for i in range(1, len(nums)+1):
-            print("res value before: ", res)
-            res = res ^ i
-            print("res value after i value: ", res)
-            res = res ^ nums[i-1]
-            print("res value after nums iteration: ", res)
-        return res
+        # res=0
+        # for i in range(1, len(nums)+1):
+        #     print("res value before: ", res)
+        #     res = res ^ i
+        #     print("res value after i value: ", res)
+        #     res = res ^ nums[i-1]
+        #     print("res value after nums iteration: ", res)
+        # return res
+        
+        hash_set = set(nums)
+        n = len(nums)+1
+        
+        for i in range(n):
+            if i not in hash_set:
+                return i
     
         # 0 or 0 = 0
         # 0 xor 0 = 0
