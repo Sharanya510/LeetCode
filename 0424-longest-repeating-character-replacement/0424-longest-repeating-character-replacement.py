@@ -18,6 +18,16 @@ class Solution:
         return longest
                 
                 
+
+                
+#                 A A B A B B A
+#                 i
+#                         j
+      
+    
+    
+    
+#     {A:3,B:2}
                     
                 
                 
