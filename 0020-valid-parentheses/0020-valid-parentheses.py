@@ -16,10 +16,6 @@ class Solution:
         return len(my_stack) == 0
         
         
-        
-        
-        
-        
         # BRUTE--FORCE
 #         my_stack = []
 #         for c in s:
