@@ -6,6 +6,7 @@ class Solution:
             diff = target - num
             if num not in hash_map:
                 hash_map[diff] = i
+                # print(hash_map)
             else:
                 return [i, hash_map[num]]
 
