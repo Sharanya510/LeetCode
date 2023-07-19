@@ -16,33 +16,52 @@ class Solution:
 #                 curr = curr.next
 #         return head
     
+    # BELOW CODE IS USING A LIST
+#         temp = head
+#         temp_list = []
+#         while temp:
+#             temp_list.append(temp.val)
+#             temp = temp.next
+#         print(temp_list)
+        
+#         i = 0
+#         while i < len(temp_list)-1:
+#             if temp_list[i] == temp_list[i+1]:
+#                 del temp_list[i]
+#             else:
+#                 i = i+1
+#         print(temp_list)
+#         dummy_node = ListNode(-1)
+        
+#         if temp_list:
+#             curr = ListNode(temp_list[0])
+#             dummy_node.next = curr
+        
+#         for i in range(1, len(temp_list)):
+#             curr.next = ListNode(temp_list[i])
+#             curr = curr.next
+#         return dummy_node.next
+
+        
+    # BELOW CODE IS USING A SET
+        
         temp = head
         temp_list = []
         while temp:
             temp_list.append(temp.val)
             temp = temp.next
         print(temp_list)
-        
-        # for i in range(len(temp_list)-2):
-        #     if temp_list[i+1] == temp_list[i]:
-        #         temp_list.remove(temp_list[i])
-        # print(temp_list)
-        i = 0
-        while i < len(temp_list)-1:
-            if temp_list[i] == temp_list[i+1]:
-                del temp_list[i]
-            else:
-                i = i+1
-        print(temp_list)
-        
+        nums_set = list(set(temp_list))
+        nums_set.sort()
+        print(nums_set)
         dummy_node = ListNode(-1)
         
-        if temp_list:
-            curr = ListNode(temp_list[0])
+        if nums_set:
+            curr = ListNode(nums_set[0])
             dummy_node.next = curr
         
-        for i in range(1, len(temp_list)):
-            curr.next = ListNode(temp_list[i])
+        for i in range(1, len(nums_set)):
+            curr.next = ListNode(nums_set[i])
             curr = curr.next
         return dummy_node.next
 
