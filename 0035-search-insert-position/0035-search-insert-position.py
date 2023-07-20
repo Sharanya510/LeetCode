@@ -19,12 +19,6 @@ class Solution:
                 
             elif target > nums[mid] :
                 low = mid + 1
-        print(high+1)
+        
         return high+1
     
-# 1   3
-# l   h 
-# m
-#     l
-#     m
-# h
