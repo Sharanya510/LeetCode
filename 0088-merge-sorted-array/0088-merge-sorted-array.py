@@ -28,10 +28,7 @@ class Solution:
                     nums1[i] = nums1[p1]
                     p1 -=1
                     i -= 1
-        # while p1 >=0 and p2 == 0:
-        #     nums1[i] = nums1[p1]
-        #     p1-=1
-        #     i-=1
+      
         while p2 >=0:
             nums1[i] = nums2[p2]
             p2 -= 1
@@ -41,10 +38,7 @@ class Solution:
             p1 -= 1
             i-=1
         return nums1
-#         p1          i
-# 4   5   6   0   0   0
-# 1   2   3
-#         p2
+
     
     
          
