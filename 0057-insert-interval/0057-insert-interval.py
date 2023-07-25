@@ -6,7 +6,7 @@ class Solution:
         
         intervals.append(newInterval)
         intervals.sort()
-        print(intervals)
+        # print(intervals)
         res.append(intervals[0])
         i = 1
         while i < len(intervals):
@@ -15,7 +15,7 @@ class Solution:
                 i = i + 1
             else:
                 res[-1][1] = max(res[-1][1], intervals[i][1])
-                print(res)
+                # print(res)
                 i = i + 1
         return res
                 
