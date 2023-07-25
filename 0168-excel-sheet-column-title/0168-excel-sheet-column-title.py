@@ -3,7 +3,7 @@ class Solution:
         res = ""
         
         while columnNumber != 0:
-            temp1, temp2 = 0,0
+            # temp1, temp2 = 0,0
             columnNumber = columnNumber - 1
             
             temp1 = columnNumber % 26
