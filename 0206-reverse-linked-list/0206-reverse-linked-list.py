@@ -8,13 +8,10 @@ class Solution:
         if (not head) or (not head.next):
             return head
         
-        p = self.reverseList(head.next)
-        head.next.next = head
+        new = self.reverseList(head.next)
+        head.next.next =head
         head.next = None
-        return p
-        
-        
-        
+        return new
         # ITERATIVE
 #         if not head:
 #             return None
