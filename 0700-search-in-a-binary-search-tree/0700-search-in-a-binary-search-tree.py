@@ -15,6 +15,7 @@ class Solution:
          else:
             return self.searchBST(root.right, val)
         
+        # APPROACH 1
         # if not root:
         #     return None 
         # if root.val == val:
@@ -24,6 +25,8 @@ class Solution:
         #     return left
         # return self.searchBST(root.right, val)
         
+        
+        # APPROACH2
 #         if root is None or root.val == val:
 #             return root
         
