@@ -5,13 +5,11 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    ans=0
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         self.k = k
         self.ans = None
         self.inorder(root)
         return self.ans
-    
     
     def inorder(self, root):
         if not root:
@@ -22,10 +20,6 @@ class Solution:
             self.ans=root.val
             return self.ans
         self.inorder(root.right)
-        
-        
-        
-        
         
         
         #ITERATIVE -- BFS
