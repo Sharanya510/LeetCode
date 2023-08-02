@@ -6,6 +6,7 @@
 #         self.right = right
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        # ITERATIVE -- BREADTH FIRST SEARCH
         stack = []
         prev = float("-inf")
         while stack or root:
