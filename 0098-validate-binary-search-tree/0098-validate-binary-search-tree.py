@@ -6,6 +6,7 @@
 #         self.right = right
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
+         #         RECURSIVE --- DEPTH FIRST SEARCH
         min_val = float("-inf")
         max_val = float("inf")
         return self.helper(root, min_val, max_val)
@@ -14,3 +15,4 @@ class Solution:
         if not root:
             return True
         return root.val > min_val and root.val < max_val and self.helper(root.left, min_val, root.val) and self.helper(root.right, root.val, max_val)
+        
