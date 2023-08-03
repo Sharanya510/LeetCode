@@ -17,6 +17,7 @@ class Solution:
         temp.append(root.val)
         if target == root.val and root.left is None and root.right is None:
             #this is deep copy
+# res.append(list(temp))
             res.append(copy.deepcopy(temp))
             print(temp)
         target -= root.val
