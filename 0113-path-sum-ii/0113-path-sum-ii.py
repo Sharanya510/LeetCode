@@ -16,7 +16,9 @@ class Solution:
             return
         temp.append(root.val)
         if target == root.val and root.left is None and root.right is None:
-            res.append(list(temp))
+            #this is deep copy
+            res.append(copy.deepcopy(temp))
+            print(temp)
         target -= root.val
         self.helper(root.left, target,res, temp)
         self.helper(root.right, target,res, temp)
