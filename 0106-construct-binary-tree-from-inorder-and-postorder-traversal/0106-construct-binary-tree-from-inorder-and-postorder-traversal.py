@@ -6,12 +6,22 @@
 #         self.right = right
 class Solution:
     def buildTree(self, inorder: List[int], postorder: List[int]) -> Optional[TreeNode]:
+#IN-ORDER --> left, root, right
+# POST-ORDER --> left, right, root
         if not inorder or not postorder:
-            return None
-        
+            return
         root = TreeNode(postorder[-1])
-        mid = inorder.index(postorder[-1])
-        root.left = self.buildTree(inorder[:mid], postorder[:mid])
-        root.right = self.buildTree(inorder[mid + 1:], postorder[mid:-1])
-        return root
+        index = 0
         
+        for i in range(len(inorder)):
+            if inorder[i] == root.val:
+                index = i
+                break
+        
+        left_inorder = inorder[:index]
+        left_postorder = postorder[:index]
+        right_inorder = inorder[index+1:len(inorder)]
+        right_postorder = postorder[index:len(postorder)-1]
+        root.left = self.buildTree(left_inorder, left_postorder)
+        root.right = self.buildTree(right_inorder, right_postorder)
+        return root
