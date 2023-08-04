@@ -3,10 +3,11 @@ class Solution:
         res = []
         highest = max(candies)
         for candy in candies:
-            res.append(candy + extraCandies >= highest)
+            if candy + extraCandies >= highest:
+                res.append(True)
+            else:
+                res.append(False)
         return res
-        
-        
         
         # BRUTE--FORCE
         # temp = 0
