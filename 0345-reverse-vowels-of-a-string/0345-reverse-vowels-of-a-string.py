@@ -8,11 +8,11 @@ class Solution:
                 char_list[start], char_list[end] = char_list[end], char_list[start]
                 start += 1
                 end -= 1
-            elif not self.isvowel(char_list[start])  and self.isvowel(char_list[end]):
+            if not self.isvowel(char_list[start])  and self.isvowel(char_list[end]):
                 start += 1
-            elif self.isvowel(char_list[start])  and not self.isvowel(char_list[end]):
+            if self.isvowel(char_list[start])  and not self.isvowel(char_list[end]):
                 end -= 1
-            elif not self.isvowel(char_list[start])  and not self.isvowel(char_list[end]):
+            if not self.isvowel(char_list[start])  and not self.isvowel(char_list[end]):
                 start += 1
                 end -= 1
         return "".join(char_list)
