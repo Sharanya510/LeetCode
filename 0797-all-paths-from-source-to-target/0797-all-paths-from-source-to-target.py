@@ -8,9 +8,6 @@ class Solution:
         for index, edge in enumerate(graph):
             adj_list[index] = edge
         
-        visited = set()
-        visited.add(0)
-        
         while queue:
             parent = queue.popleft()
             if parent[-1] == n-1:
