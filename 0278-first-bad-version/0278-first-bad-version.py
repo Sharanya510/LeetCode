@@ -14,9 +14,5 @@ class Solution:
         return low
         
 
-# 5
-# 0  5
-# mid = 3 --> false
-
 
         
