@@ -12,13 +12,6 @@ class Solution:
                 return True
         return False
         
-        
-        
-        
-        
-        
-        
-        
         # BRUTE-FORCE
         # n = len(nums)
         # for i in range(n-2):
