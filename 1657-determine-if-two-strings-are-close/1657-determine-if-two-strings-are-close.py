@@ -10,9 +10,6 @@ class Solution:
         
 #         return count1.keys() == count2.keys() and sorted(count1.values()) == sorted(count2.values())
         
-        
-        
-        
         word1_hashmap , word2_hashmap = {}, {}
         for c in word1:
             if c not in word1_hashmap:
@@ -24,6 +21,8 @@ class Solution:
                 word2_hashmap[c] = 1
             else:
                 word2_hashmap[c] += 1
+        # print(sorted(word1_hashmap.values()))
+        # print(sorted(word2_hashmap.values()))
         return word1_hashmap.keys() == word2_hashmap.keys() and sorted(word1_hashmap.values()) == sorted(word2_hashmap.values())
             
 # a   b   b   b   z   c   f
@@ -34,5 +33,5 @@ class Solution:
 
 # c   a   b   b   b   a
 # a = 2; b = 3; c = 1
-# a   a   b   b   s   s
-# a = 2; b = 2; s = 2
+# a   b   b   c c   c
+# a = 1; b = 2; c=3
