@@ -13,10 +13,6 @@ class Solution:
             maximum = max(maximum, right - left + 1)
         return maximum
             
-            
-                    
-                
-        
 #         length = 0
 #         max_length = 0
 #         temp = 0
