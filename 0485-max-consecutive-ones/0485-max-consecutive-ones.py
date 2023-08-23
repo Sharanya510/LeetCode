@@ -17,10 +17,11 @@ class Solution:
         for right in range(len(nums)):
             if nums[right] == 1:
                 length = right - left + 1
+                max_length = max(length, max_length)
             else:
                 left = right + 1 
                 length = 0
-            max_length = max(length, max_length)
+            
         return max_length
     
     
