@@ -5,41 +5,52 @@
 #         self.next = next
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
-        temp1 = head
-        list1 = []
-        while temp1:
-            list1.append(temp1.val)
-            temp1 = temp1.next
-        # print(list1)
-        return list1 == list1[::-1]
+        if not head:
+            return True
+        
+        first_half_end = self.finding_midpoint(head)
+        second_half_start = self.reverse(first_half_end.next)
+        
+        first_position = head
+        second_position = second_half_start
+        while second_position:
+            if first_position.val != second_position.val:
+                return False
+            first_position = first_position.next
+            second_position = second_position.next
+        return True
             
-            
-            
-            
-        # prev = None
-        # temp = head
-        # curr = head
-        # while temp:
-        #     temp = temp.next
-        #     curr.next = prev
-        #     prev = curr
-        #     curr = temp
-        # prev = head
-        # while prev:
-        #     list2.append(prev.val)
-        #     prev = prev.next
-        # print(list1)
-        # print(list2)
-        # return list1 == list2
-        
-        
-            
+    def finding_midpoint(self, head):
+        fast = head
+        slow = head
+        while fast.next and fast.next.next:
+            fast = fast.next.next
+            slow = slow. next
+        return slow
+    def reverse(self, head):
+        prev = None
+        temp = head
+        curr = head
+        while temp:
+            temp = temp.next
+            curr.next = prev
+            prev = curr
+            curr = temp
+        return prev
+    
         
         
         
         
         
-# None    1   2   2   1
-# prev    t
-#         c
-#         p   t
+        
+        
+        
+        # BRUTE-FORCE
+        # temp1 = head
+        # list1 = []
+        # while temp1:
+        #     list1.append(temp1.val)
+        #     temp1 = temp1.next
+        # return list1 == list1[::-1]
+        
