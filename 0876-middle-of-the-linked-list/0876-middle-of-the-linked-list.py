@@ -11,3 +11,7 @@ class Solution:
             fast = fast.next.next
             slow = slow.next
         return slow
+    
+# 1   2   3   4   5   6
+#     f
+#     s
