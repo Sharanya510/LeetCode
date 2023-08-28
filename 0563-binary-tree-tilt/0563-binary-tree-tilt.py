@@ -7,7 +7,7 @@
 class Solution:
     def findTilt(self, root: Optional[TreeNode]) -> int:
         self.total = 0
-        self.helper(root, self.total )
+        self.helper(root, self.total)
         return self.total
     
     def helper(self, root, total):
