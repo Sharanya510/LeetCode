@@ -21,7 +21,6 @@ class Solution:
             else:
                 left = right + 1 
                 length = 0
-            
         return max_length
     
     
