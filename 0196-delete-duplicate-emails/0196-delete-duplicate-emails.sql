@@ -1,7 +1,6 @@
 # Write your MySQL query statement below
-DELETE p2
-FROM person p1,
-    person p2
-WHERE
-    p1.Email = p2.Email AND p1.Id < p2.Id
+DELETE P2
+FROM PERSON P1,
+     PERSON P2
+WHERE P1.EMAIL = P2.EMAIL AND P1.ID < P2.ID
 ;
