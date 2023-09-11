@@ -8,9 +8,7 @@ class Solution:
             if nums[j] != 0:
                 nums[i], nums[j] = nums[j], nums[i]
                 i += 1
-            
-         
-        
+
         
 # 0   1   0   3   12
 # i
@@ -25,7 +23,6 @@ class Solution:
 #         i         j
 # 1   3   12  0     0
 
-        
         
 #         count = 0
 #         for n in nums:
