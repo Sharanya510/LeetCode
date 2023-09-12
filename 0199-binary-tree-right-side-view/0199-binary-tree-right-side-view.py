@@ -11,7 +11,6 @@ class Solution:
         res = []
         queue = deque()
         queue.append(root)
-        
         while queue:
             level = len(queue)
             for i in range(level):
@@ -22,6 +21,6 @@ class Solution:
                     queue.append(node.right)
                 if i == level - 1:
                     res.append(node.val)
-        return res
             
+        return res
         
