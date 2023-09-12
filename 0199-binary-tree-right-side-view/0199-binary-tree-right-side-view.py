@@ -21,6 +21,5 @@ class Solution:
                     queue.append(node.right)
                 if i == level - 1:
                     res.append(node.val)
-            
         return res
         
