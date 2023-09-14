@@ -1,7 +1,7 @@
 class Solution:
     def uniqueOccurrences(self, arr: List[int]) -> bool:
         hash_map = {}
-        for i, n in enumerate(arr):
+        for n in arr:
             if n not in hash_map:
                 hash_map[n] = 1
             else:
