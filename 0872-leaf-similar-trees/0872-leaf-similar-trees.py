@@ -11,8 +11,8 @@ class Solution:
         self.helper(root1, self.res1)
         self.helper(root2, self.res2)
         return self.res1 == self.res2
-    
-    def helper(self, root, res):    
+        
+    def helper(self, root, res):
         if not root.left and not root.right:
             res.append(root.val)
         elif not root.left:
@@ -22,7 +22,3 @@ class Solution:
         else:
             self.helper(root.left, res)
             self.helper(root.right, res)
-        
-        
-        
-        
