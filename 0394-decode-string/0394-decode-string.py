@@ -9,12 +9,15 @@ class Solution:
                 if i > 0 and s[i-1].isdigit():
                     prev = int(my_stack.pop())*10
                 my_stack.append(prev+int(c))
+                
 #             check if it is opening bracket
             if c == '[':
                 my_stack.append(c)
+            
 #             check if it is an alphabet
             if c.isalpha():
                 my_stack.append(c)
+            
 #             check if it is an closing bracket
             if c == ']':
                 str1 = ""
