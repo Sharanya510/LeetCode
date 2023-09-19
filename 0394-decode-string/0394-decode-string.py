@@ -1,7 +1,6 @@
 class Solution:
     def decodeString(self, s: str) -> str:
         my_stack = []
-        is_digit = False
         for i in range(len(s)):
             c = s[i]
             if c.isdigit():
