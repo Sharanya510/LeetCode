@@ -3,15 +3,19 @@ class Solution:
         my_stack = []
         for i in range(len(s)):
             c = s[i]
+#             check if this is a digit
             if c.isdigit():
                 prev = 0
-                if i>0 and s[i-1].isdigit():
+                if i > 0 and s[i-1].isdigit():
                     prev = int(my_stack.pop())*10
                 my_stack.append(prev+int(c))
+#             check if it is opening bracket
             if c == '[':
                 my_stack.append(c)
+#             check if it is an alphabet
             if c.isalpha():
                 my_stack.append(c)
+#             check if it is an closing bracket
             if c == ']':
                 str1 = ""
                 while True :
