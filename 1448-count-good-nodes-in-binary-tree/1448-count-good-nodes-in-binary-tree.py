@@ -8,7 +8,7 @@ class Solution:
     def goodNodes(self, root: TreeNode) -> int:
         self.num_good_nodes = 0
         self.max_so_far = float("-inf")
-        self.helper(root, 0, float('-inf'))
+        self.helper(root, self.num_good_nodes, self.max_so_far)
         return self.num_good_nodes
         
         
