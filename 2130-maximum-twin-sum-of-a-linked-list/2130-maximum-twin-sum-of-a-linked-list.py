@@ -6,17 +6,15 @@
 class Solution:
     def pairSum(self, head: Optional[ListNode]) -> int:
         temp = head
-        values = []
+        new_list = []
         while temp:
-            values.append(temp.val)
+            new_list.append(temp.val)
             temp = temp.next
-        # print(values)
-        i, j = 0, len(values) - 1
+        # print(new_list)
+        i, j = 0, len(new_list) - 1
         max_sum = 0
         while i < j:
-            max_sum = max(max_sum, values[i] + values[j])
+            max_sum = max(max_sum, new_list[i] + new_list[j])
             i += 1
             j -= 1
         return max_sum
-        
-            
