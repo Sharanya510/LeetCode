@@ -13,8 +13,8 @@ class Solution:
         
         q=deque()
         
-        for i in range(len(indegree)):
-            if indegree[i]==0:
+        for i, n in enumerate(indegree):
+            if n == 0 :
                 q.append(i)
         print(q)
         while q:
