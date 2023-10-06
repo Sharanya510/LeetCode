@@ -8,15 +8,15 @@ class Solution:
         for preq in prerequisites:
             indegree[preq[0]]+=1
             course_map[preq[1]].append(preq[0])
-        print(indegree)
-        print(course_map)
+        # print(indegree)
+        # print(course_map)
         
         q=deque()
         
         for i, n in enumerate(indegree):
             if n == 0 :
                 q.append(i)
-        print(q)
+        # print(q)
         while q:
             course=q.popleft()
             for child in course_map[course]:
