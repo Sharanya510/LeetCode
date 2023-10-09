@@ -9,28 +9,23 @@ class Solution:
         if not root:
             return None
         queue = deque()
-        parent = None
-        queue.append([root, parent])
+        parent=None
+        queue.append([root,parent])
+       
         while queue:
             size = len(queue)
-            foundone = False
+            flag = False
             for i in range(size):
-                node, par = queue.popleft()
+                node,parent = queue.popleft()
                 if node.val == x or node.val == y:
-                    if not foundone:
-                        foundone = True
-                        parent = par
-                    else: return parent != par
+                    if not flag:
+                        flag=True
+                        x_parent=parent
+                    else:
+                        return x_parent!=parent               
                 if node.left:
-                    queue.append([node.left, node])
+                    queue.append([node.left,node])
                 if node.right:
-                    queue.append([node.right, node])
-                
+                    queue.append([node.right,node])
         return False
-
     
-# [1,0, none]
-# node = 1, level = 0, parent = none
-# [2,1,1] [3,1,1]
-# [4,2,2] [5,2,3]
-                
