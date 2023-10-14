@@ -15,6 +15,6 @@ class Solution:
         
         for i in range(len(indegree)):
             if indegree[i] == n - 1 and outdegree[i] == 0:
-                return i +1
+                return i + 1
         return -1
         
