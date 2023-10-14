@@ -9,9 +9,6 @@ class Solution:
         for item in trust:
             indegree[item[1]-1] += 1
             outdegree[item[0]-1] += 1
-            
-        print(indegree)
-        print(outdegree)
         
         for i in range(len(indegree)):
             if indegree[i] == n - 1 and outdegree[i] == 0:
