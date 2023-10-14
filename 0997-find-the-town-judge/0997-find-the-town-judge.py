@@ -14,10 +14,6 @@ class Solution:
         print(outdegree)
         
         for i in range(len(indegree)):
-            # if indegree[i] != 0 and outdegree[i] == 0:
-            #     return i +1
-            # if indegree[i] != 0 and outdegree[i] != 0:
-            #     break
             if indegree[i] == n - 1 and outdegree[i] == 0:
                 return i +1
         return -1
