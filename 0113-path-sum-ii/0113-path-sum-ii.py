@@ -6,21 +6,19 @@
 #         self.right = right
 class Solution:
     def pathSum(self, root: Optional[TreeNode], targetSum: int) -> List[List[int]]:
-        res = []
-        temp = []
-        self.helper(root, targetSum,res, temp)
+        res, temp = [], []
+        self.helper(root, targetSum, res, temp)
         return res
     
-    def helper(self, root, target,res, temp):
+    def helper(self, root, target, res, temp):
         if not root:
-            return
+            return 
         temp.append(root.val)
         if target == root.val and root.left is None and root.right is None:
-            #this is deep copy
-# res.append(list(temp))
-            res.append(copy.deepcopy(temp))
-            print(temp)
+            res.append(list(temp))
+        
         target -= root.val
-        self.helper(root.left, target,res, temp)
-        self.helper(root.right, target,res, temp)
+        self.helper(root.left, target, res, temp)
+        self.helper(root.right, target, res, temp)
         temp.pop()
+        return res
