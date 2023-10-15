@@ -3,15 +3,11 @@ class Solution:
         if not grid:
             return 0
         
-    
-        
         queue = deque()
         row = len(grid)
         col = len(grid[0])
-        
         self.max_area = 0
         self.visited = set()
-        
         for i in range(row):
             for j in range(col):
                 if grid[i][j] == 1:
