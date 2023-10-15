@@ -18,14 +18,12 @@ class Solution:
                     area = 1
                     queue.append([i,j])
                     self.bfs(i, j, queue, grid, area)
-                    
         return self.max_area
         
     
     def bfs(self, i, j, queue, grid, area):
         directions = [[1,0], [-1, 0], [0,1], [0,-1]]
         while queue:
-            print(area)
             i, j = queue.popleft()
             self.visited.add((i,j))
             for dirs in directions:
@@ -36,4 +34,4 @@ class Solution:
                     area += 1
                     queue.append([new_x, new_y])
             
-            self.max_area = max(self.max_area, area)
+        self.max_area = max(self.max_area, area)
