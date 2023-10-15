@@ -14,7 +14,6 @@ class Solution:
             return root
         queue = deque()
         queue.append(root)
-       
         while queue:
             size = len(queue)
             for i in range(size):
@@ -26,4 +25,3 @@ class Solution:
                 if node.right:
                     queue.append(node.right)
         return root
-            
