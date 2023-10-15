@@ -11,7 +11,7 @@ class Solution:
     def helper(self, root, target):
         if not root:
             return False
-        if target == root.val and root.left is None and root.right is None:
+        if root.val == target and root.left is None and root.right is None:
             return True
         target -= root.val
         return self.helper(root.left, target) or self.helper(root.right, target)
