@@ -30,4 +30,4 @@ class Solution:
                     area += 1
                     queue.append([new_x, new_y])
             
-        self.max_area = max(self.max_area, area)
+            self.max_area = max(self.max_area, area)
