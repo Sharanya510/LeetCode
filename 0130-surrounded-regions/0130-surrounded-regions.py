@@ -19,7 +19,6 @@ class Solution:
             
         while queue:
             x, y = queue.popleft()
-            visited.add((x,y))
             directions = [[0,1], [0, -1], [1,0], [-1, 0]]
             for dirs in directions:
                 new_x = dirs[0] + x
