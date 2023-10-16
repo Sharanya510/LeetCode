@@ -23,7 +23,7 @@ class Solution:
             for dirs in directions:
                 new_x = dirs[0] + x
                 new_y = dirs[1] + y
-                if new_x >= 0 and new_x < len(board) and new_y >= 0 and new_y < len(board[0]) and  (new_x, new_y) not in visited and board[x][y] == "O":
+                if new_x >= 0 and new_x < len(board) and new_y >= 0 and new_y < len(board[0]) and  (new_x, new_y) not in visited and board[new_x][new_y] == "O":
                     visited.add((new_x, new_y))
                     queue.append([new_x,new_y])
         
