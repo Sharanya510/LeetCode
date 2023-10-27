@@ -4,8 +4,6 @@ class ParkingSystem:
         self.big = big
         self.medium = medium
         self.small = small
-        self.hash_map = {}
-        self.res = [self.big, self.medium, self.small]
         
     def addCar(self, carType: int) -> bool:
         if carType == 1:
