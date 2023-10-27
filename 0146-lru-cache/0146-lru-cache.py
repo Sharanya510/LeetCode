@@ -51,10 +51,6 @@ class LRUCache:
             else:
                 self.add_to_head(self.hash_map[key])
             
-            
-            
-            
-
 
 # Your LRUCache object will be instantiated and called as such:
 # obj = LRUCache(capacity)
