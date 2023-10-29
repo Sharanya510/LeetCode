@@ -20,13 +20,10 @@ class Trie:
             if node.children[ord(c) - ord('a')] != None:
                 node = node.children[ord(c) - ord('a')]
             else:
-                # node.isEnd = False
                 return False
                 
         if node.isEnd == True:
             return True
-        # else:
-        #     return False
         
     def startsWith(self, prefix: str) -> bool:
         node = self.root
