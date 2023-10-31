@@ -38,7 +38,7 @@ class Trie:
         
         for child in node.children:
             if child != None:
-                res = self.dfs(child, prefix, path[:], res)
+                res = self.dfs(child, prefix, path, res)
         
         return res
         
