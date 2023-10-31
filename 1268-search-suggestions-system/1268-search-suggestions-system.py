@@ -54,8 +54,7 @@ class Solution:
         
         for c in searchWord:
             curr_searchword += c
-            suggestions = trie.getSuggestions(curr_searchword)
-            res.append(suggestions)
+            res.append(trie.getSuggestions(curr_searchword))
         return res
         
         
