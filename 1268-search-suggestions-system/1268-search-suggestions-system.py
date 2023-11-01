@@ -1,60 +1,46 @@
-class TrieNode:
-    def __init__(self, val):
-        self.isEnd = False
-        self.children = [None] * 26
-        self.val = val
-        
-class Trie:
-    def __init__(self):
-        self.root = TrieNode(None)
-        
-    def insert(self, word):
-        node = self.root
-        for c in word:
-            if node.children[ord(c) - ord('a')] == None:
-                node.children[ord(c) - ord('a')] = TrieNode(c)
-            node = node.children[ord(c) - ord('a')]
-        node.isEnd = True
-    
-    def getSuggestions(self, searchword):
-        node = self.root
-        suggestions = []
-        for c in searchword:
-            if node.children[ord(c) - ord('a')] == None:
-                return suggestions
-            node = node.children[ord(c) - ord('a')]
-        suggestions = self.dfs(node, searchword[:-1], "", [])
-        return suggestions
-    
-    def dfs(self, node, prefix, path, res):
-        if len(res) >= 3:
-            return res
-        
-        path += node.val
-        
-        if node.isEnd:
-            res.append(prefix + path[:])
-        
-        
-        for child in node.children:
-            if child != None:
-                res = self.dfs(child, prefix, path, res)
-        
-        return res
-        
-        
+# class Solution:
+#     def suggestedProducts(self, products: List[str], searchWord: str) -> List[List[str]]:
+from typing import List
+
 class Solution:
+    def lower_bound(self, products: List[str], start: int, word: str) -> int:
+        i, j = start, len(products)
+        while i < j:
+            mid = (i + j) // 2
+            if products[mid] >= word:
+                j = mid
+            else:
+                i = mid + 1
+        return i
+
     def suggestedProducts(self, products: List[str], searchWord: str) -> List[List[str]]:
-        trie = Trie()
-        res = []
-        curr_searchword = ""
-        
-        for product in products:
-            trie.insert(product)
-        
+        products.sort()
+        result = []
+        start, bsStart, n = 0, 0, len(products)
+        prefix = ""
         for c in searchWord:
-            curr_searchword += c
-            res.append(trie.getSuggestions(curr_searchword))
-        return res
-        
-        
+            prefix += c
+
+            # Get the starting index of word starting with `prefix`.
+            start = self.lower_bound(products, bsStart, prefix)
+
+            # Add empty list to result.
+            result.append([])
+
+            # Add the words with the same prefix to the result.
+            # Loop runs until `i` reaches the end of input or 3 times or till the
+            # prefix is same for `products[i]` Whichever comes first.
+            for i in range(start, min(start + 3, n)):
+                if len(products[i]) < len(prefix) or not products[i].startswith(prefix):
+                    break
+                result[-1].append(products[i])
+
+            # Reduce the size of elements to binary search on since we know
+            bsStart = abs(start)
+        return result
+
+# Example usage
+# solution = Solution()
+# products = ["mobile", "mouse", "moneypot", "monitor", "mousepad"]
+# searchWord = "mouse"
+# print(solution.suggestedProducts(products, searchWord))
