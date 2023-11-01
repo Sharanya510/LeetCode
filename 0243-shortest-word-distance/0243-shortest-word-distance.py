@@ -1,6 +1,6 @@
 class Solution:
     def shortestDistance(self, words: List[str], word1: str, word2: str) -> int:
-        first_index, second_index = -1, -1
+        first_index, second_index = -2, -2
         shortest_distance = len(words)
         for index, word in enumerate(words):
             if word == word1:
@@ -8,7 +8,8 @@ class Solution:
             if word == word2:
                 second_index = index
                 
-            if first_index != -1 and second_index != -1:
+            if first_index != -2 and second_index != -2:
+                print(shortest_distance)
                 shortest_distance = min(shortest_distance, abs(first_index - second_index))
         return shortest_distance
         
