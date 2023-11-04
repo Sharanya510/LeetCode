@@ -7,13 +7,14 @@ class Solution:
         n = len(graph)
         for index, edge in enumerate(graph):
             adj_list[index] = edge
-        
+            # print(adj_list)
         while queue:
             parent = queue.popleft()
             if parent[-1] == n-1:
                 res.append(parent)
             for child in adj_list[parent[-1]]:
                 queue.append(parent+[child])
+                # print(queue)
         return res
                 
                 
