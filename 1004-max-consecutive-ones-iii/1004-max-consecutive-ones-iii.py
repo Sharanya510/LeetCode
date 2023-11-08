@@ -13,22 +13,6 @@ class Solution:
                 
             max_length = max(max_length, right - left + 1)
         return max_length    
-                
-# 1   1   1   0   0   0   1   1   1   1   0
-# l
-# r
-# length = 1
-#     r
-#     length = 2
-#         r
-#         length = 3
-#             r
-#             length = 4
-#                 r
-#                 length = 5
-#                       r
-#                       l
-#                       length = 1
-# 
+                 
                 
             
