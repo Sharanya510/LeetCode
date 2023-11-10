@@ -5,6 +5,6 @@ class Solution:
         for i, n in enumerate(digits):
             resul += n * pow(10, length-i-1)
         resul = resul + 1
-        print(resul)
+        # print(resul)
         res = [int(x) for x in str(resul)]
         return res
