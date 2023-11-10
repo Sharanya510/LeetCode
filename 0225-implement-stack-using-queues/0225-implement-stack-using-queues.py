@@ -9,10 +9,6 @@ class MyStack:
         self.last_element = self.queue1[-1]
 
     def pop(self) -> int:
-        # if len(self.queue2) == 0:
-        #     while self.queue1:
-        #         self.queue2.append(self.queue1.pop(0))
-        # else:
         while self.queue1:
             self.queue2.append(self.queue1.pop(0))
         return self.queue2.pop()
