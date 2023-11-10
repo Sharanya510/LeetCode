@@ -44,7 +44,7 @@ class MyHashSet:
 
     def contains(self, key: int) -> bool:
         index = key % self.size
-        if self.array[index]:
+        if self.array[index] != None:
             curr = self.array[index]
             while curr:
                 if curr.key == key:
