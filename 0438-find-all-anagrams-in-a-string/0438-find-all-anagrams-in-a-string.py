@@ -16,7 +16,7 @@ class Solution:
                 ch = s[start]
                 if ch in p_hashmap:
                     p_hashmap[ch] += 1
-                    if p_hashmap[ch] == 1:
+                    if p_hashmap[ch] > 0:
                         counter += 1
                 start +=1
             end += 1
