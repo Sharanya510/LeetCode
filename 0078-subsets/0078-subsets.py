@@ -3,7 +3,7 @@ class Solution:
         
         def dfs(i, res, temp, nums):
             if i == len(nums):
-                res.append(list(temp))
+                res.append(temp)
                 return
             dfs(i+1, res, temp + [nums[i]], nums)
             dfs(i+1, res, temp, nums)
