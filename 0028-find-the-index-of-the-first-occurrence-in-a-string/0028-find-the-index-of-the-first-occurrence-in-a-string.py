@@ -15,16 +15,27 @@ class Solution:
                     if firstIndex is None:
                         firstIndex = i
                     j += 1
-                    
+                    print("The value of i", i)
+                    print("The value of j", j)
+                    print("The value of firstIndex", firstIndex)
                 else:
                     if firstIndex is not None:
                         i = firstIndex
                     j = 0
                     firstIndex = None
+                    print("The value of i", i)
+                    print("The value of j", j)
+                    print("The value of firstIndex", firstIndex)
                 i += 1
             return firstIndex
             
-            
-            
         return -1
+    
+#     m   i   s   s   i   s   s   i   p   p   i              i    s   s   i   p
+#     i                                                      j
+#         i                                                  j
+#             i                                                   j
+#                 i                                                    j
+#                     i                                                    j 
+#                         i                                                    j
         
