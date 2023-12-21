@@ -6,7 +6,7 @@ class Solution:
         if target > nums[-1]:
             return high+1
         if target <= nums[0]:
-                return 0
+            return 0
         
         while low <= high:
             mid = (low+ high)//2
