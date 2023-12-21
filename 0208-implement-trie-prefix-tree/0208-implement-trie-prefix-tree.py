@@ -3,33 +3,34 @@ class TrieNode:
         self.isEnd = False
         self.children = [None] * 26
 class Trie:
+
     def __init__(self):
         self.root = TrieNode()
 
     def insert(self, word: str) -> None:
         node = self.root
-        for c in word:
-            if node.children[ord(c) - ord('a')] == None:
-                node.children[ord(c) - ord('a')] = TrieNode()
-            node = node.children[ord(c) - ord('a')]
+        for char in word:
+            if node.children[ord(char) - ord('a')] == None:
+                node.children[ord(char) - ord('a')] = TrieNode()
+            node = node.children[ord(char) - ord('a')]
         node.isEnd = True
 
     def search(self, word: str) -> bool:
         node = self.root
-        for c in word:
-            if node.children[ord(c) - ord('a')] != None:
-                node = node.children[ord(c) - ord('a')]
+        for char in word:
+            if node.children[ord(char) - ord('a')] != None:
+                node = node.children[ord(char) - ord('a')]
             else:
                 return False
-                
+            
         if node.isEnd == True:
             return True
-        
+
     def startsWith(self, prefix: str) -> bool:
         node = self.root
-        for c in prefix:
-            if node.children[ord(c) - ord('a')] != None:
-                node = node.children[ord(c) - ord('a')]
+        for char in prefix:
+            if node.children[ord(char) - ord('a')] != None:
+                node = node.children[ord(char) - ord('a')]
             else:
                 return False
         return True
