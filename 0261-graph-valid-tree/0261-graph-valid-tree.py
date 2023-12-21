@@ -32,6 +32,5 @@ class Solution:
             if indegree[i] != 0:
                 return False
         return True
-        
             
         
