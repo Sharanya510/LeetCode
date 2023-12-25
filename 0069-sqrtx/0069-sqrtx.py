@@ -10,8 +10,6 @@ class Solution:
                 return currNo - 1
         return 0
     
-    
-    
         # BINARY -- SEARCH
 #         low, high = 0, x
 #         while low <= high:
@@ -21,11 +19,9 @@ class Solution:
 #             elif mid * mid > x:
 #                 high = mid - 1
 #             elif mid * mid < x:
-#                 low = mid + 1
-                
+#                 low = mid + 1   
 #         return high
-        
-        
+          
 # 0   1   2   3   4   5   6   7   8
 # mid = 0 + 8 // 2 = 4
 # mid*mid > target --> 4 > 8 --> left side
