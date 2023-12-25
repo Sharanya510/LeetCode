@@ -1,10 +1,9 @@
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
-        resul = 0
+        result = 0
         length = len(digits)
         for i, n in enumerate(digits):
-            resul += n * pow(10, length-i-1)
-        resul = resul + 1
-        # print(resul)
-        res = [int(x) for x in str(resul)]
-        return res
+            result += n * pow(10, length - i - 1)
+        result = result +1
+        new_res = [int(x) for x in str(result)]
+        return new_res
