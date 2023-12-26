@@ -9,7 +9,7 @@ class Solution:
                 second_index = index
                 
             if first_index != -2 and second_index != -2:
-                print(shortest_distance)
+                # print(shortest_distance)
                 shortest_distance = min(shortest_distance, abs(first_index - second_index))
         return shortest_distance
         
