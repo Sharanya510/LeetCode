@@ -1,38 +1,16 @@
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        ans = collections.defaultdict(list)
-
-        for s in strs:
-            count = [0] * 26
-            for c in s:
-                count[ord(c) - ord("a")] += 1
-            ans[tuple(count)].append(s)
-        return ans.values()
-        
-        # SECOND APPROACH
-#         d =defaultdict(list)
-#         res = []
-#         for word in strs:
-#             new_word = ''.join(sorted(word))
-#             # print(new_word)
-#             if new_word not in d:
-#                 d[new_word] = [word]
-#             else:
-#                 d[new_word].append(word)
-#         print(d)
-        
-#         for key, value in d.items():
-#             res.append(value)
-#         return res
-
-
-        # THIRD APPROACH
-        # ans = {}
-        # for s in strs:
-        #     key = tuple(sorted(s))
-        #     if key in ans:
-        #         ans[key].append(s)
-        #     else:
-        #         ans[key] = [s]
-        # return list(ans.values())
-        
+        output_list = defaultdict(list)
+        for string in strs:
+            char_count = [0] * 26
+            for char in string:
+                char_count[ord(char) - ord('a')] += 1
+            output_list[tuple(char_count)].append(string)
+        return output_list.values()
+    
+    # ["eat","tea","tan","ate","nat","bat"]
+    # output_list = []
+    # count = [0]*26
+    # eat --> count = [1 0 0 ]
+    
+    
