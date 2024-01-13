@@ -12,9 +12,9 @@ class Codec:
         """Decodes a single string to a list of strings.
         """
         res = []
-        word = ""
         i, j = 0, 0
         length = 0
+        word = ""
         while i < len(s):
             if i <= j and s[j] == "#":
                 length = int(s[i:j])
@@ -23,7 +23,6 @@ class Codec:
                 i = j
                 res.append(word)
             j += 1
-            
         return res
         
 
