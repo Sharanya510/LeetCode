@@ -1,5 +1,8 @@
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
+        # APPROACH --> BRUTE FORCE
+        # TIME COMPLEXITY --> O(N)
+        # SPACE COMPLEXITY --> O(N)
         left_prefix = [1]*len(nums)
         right_prefix = [1]*len(nums)
         res = [0]* len(nums)
@@ -15,7 +18,7 @@ class Solution:
         
         # APPROACH --> PREFIX SUM
         # TIME COMPLEXITY --> O(N)
-        # SPACE COMPLEXITY --> O(N)
+        # SPACE COMPLEXITY --> O(1)
 #         res = [0]*len(nums)
 #         prefix = 1
 #         for i, n in enumerate(nums):
