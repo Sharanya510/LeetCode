@@ -6,6 +6,9 @@
 #         self.right = right
 class Solution:
     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        # APPROACH --> ITERATIVE
+        # TIME COMPLEXITY --> O(N)
+        # SPACE COMPLEXITY --> O(N)
         queue = deque()
         queue.append((p,q))
         while queue:
