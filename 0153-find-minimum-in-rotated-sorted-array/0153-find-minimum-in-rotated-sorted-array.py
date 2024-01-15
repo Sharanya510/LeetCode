@@ -1,5 +1,8 @@
 class Solution:
     def findMin(self, nums: List[int]) -> int:
+        # APPROACH --> BINARY SEARCH
+        # TIME COMPLEXITY --> O(LOG N)
+        # SPACE COMPLEXITY --> O(1)
         low, high = 0, len(nums)-1
         if nums[low] < nums[high]:
             return nums[low]
@@ -15,7 +18,6 @@ class Solution:
                 high = mid - 1
             else:
                 low = mid +1
-        return high
             
             
             
