@@ -5,7 +5,6 @@
 #         self.next = next
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        
         Dummy_Node = ListNode(-1)
         prev = Dummy_Node
         
@@ -18,6 +17,5 @@ class Solution:
                 list2 = list2.next
             prev = prev.next
         prev.next = list1 if list1 is not None else list2
-        
         return Dummy_Node.next
         
