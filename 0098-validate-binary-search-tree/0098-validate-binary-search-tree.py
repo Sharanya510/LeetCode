@@ -6,6 +6,9 @@
 #         self.right = right
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        # APPROACH --> ITERATIVE
+        # TIME COMPLEXITY --> O(N)
+        # SPACE COMPLEXITY --> O(N)
         if not root:
             return True
         min_value = float("-inf")
