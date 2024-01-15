@@ -10,21 +10,17 @@ class Solution:
         while temp:
             length += 1
             temp = temp.next
-        print(length)
         
         curr = head
         k = length - n
         if k == 0:
             return curr.next
-        
         while k > 1:
             curr = curr.next
             k -= 1
-        print(curr.val)
         
-        if curr.next :
+        if curr.next:
             curr.next = curr.next.next
             return head
         else:
             return None
-            
