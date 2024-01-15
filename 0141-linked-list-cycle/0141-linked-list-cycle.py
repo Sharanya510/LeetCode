@@ -6,13 +6,27 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        if not head:
-            return False
-        slow = head
-        fast = head
-        while fast.next and fast.next.next:
-            slow = slow.next
-            fast = fast.next.next
-            if slow == fast:
+        # APPROACH --> HAASH TABLE
+        # TIME COMPLEXITY --> O(N)
+        # SPACE COMPLEXITY --> O(N)
+        nodes_seen = set()
+        while head:
+            if head in nodes_seen:
                 return True
+            nodes_seen.add(head)
+            head = head.next
         return False
+    
+        # APPROACH --> FLOYD'S CYCLE FINDING ALGORITHM
+        # TIME COMPLEXITY --> O(N)
+        # SPACE COMPLEXITY --> O(1)
+        # if not head:
+        #     return False
+        # slow = head
+        # fast = head
+        # while fast.next and fast.next.next:
+        #     slow = slow.next
+        #     fast = fast.next.next
+        #     if slow == fast:
+        #         return True
+        # return False
