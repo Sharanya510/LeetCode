@@ -7,6 +7,7 @@ class Solution:
         for right in range(len(s)):
             right_char = s[right]
             hash_map[right_char] += 1
+            # print(hash_map)
             if hash_map[right_char] > 1:
                 counter += 1
                 
