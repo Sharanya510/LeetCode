@@ -6,6 +6,9 @@
 #         self.right = right
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        #APPROACH --> ITERATIVE
+        # TIME COMPLEXITY --> O(N)
+#         SPACE COMPLEXITY --> O(N)
         if not root:
             return None
         queue = deque()
