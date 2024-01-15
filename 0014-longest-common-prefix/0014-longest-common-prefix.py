@@ -8,4 +8,5 @@ class Solution:
                     return res
             res += prefix[i]
         return res
+            
                 
