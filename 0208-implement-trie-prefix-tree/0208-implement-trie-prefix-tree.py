@@ -1,7 +1,8 @@
-class TrieNode:
+class TrieNode():
     def __init__(self):
         self.isEnd = False
-        self.children = [None] * 26
+        self.children = [None]*26
+        
 class Trie:
 
     def __init__(self):
@@ -12,7 +13,7 @@ class Trie:
         for char in word:
             if node.children[ord(char) - ord('a')] == None:
                 node.children[ord(char) - ord('a')] = TrieNode()
-            node = node.children[ord(char) - ord('a')]
+            node = node.children[ord(char) -  ord('a')]
         node.isEnd = True
 
     def search(self, word: str) -> bool:
@@ -22,9 +23,9 @@ class Trie:
                 node = node.children[ord(char) - ord('a')]
             else:
                 return False
-            
         if node.isEnd == True:
             return True
+        return False
 
     def startsWith(self, prefix: str) -> bool:
         node = self.root
