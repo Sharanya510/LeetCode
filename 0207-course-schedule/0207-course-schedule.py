@@ -2,33 +2,28 @@ class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         if not prerequisites:
             return True
-        indegree=[0]*numCourses
-        course_map=defaultdict(list)
         
-        for preq in prerequisites:
-            indegree[preq[0]]+=1
-            course_map[preq[1]].append(preq[0])
-        # print(indegree)
-        # print(course_map)
+        indegree = [0]*numCourses
+        adjacency_list = defaultdict(list)
         
-        q=deque()
+        for prereq in prerequisites:
+            indegree[prereq[0]] += 1
+            adjacency_list[prereq[1]].append(prereq[0])
+            
+        queue = deque()
+        for index, value in enumerate(indegree):
+            if value == 0:
+                queue.append(index)
         
-        for i, n in enumerate(indegree):
-            if n == 0 :
-                q.append(i)
-        # print(q)
-        while q:
-            course=q.popleft()
-            for child in course_map[course]:
-                indegree[child]-=1
-                if indegree[child]==0:
-                    q.append(child)
-        
+        while queue:
+            new_value = queue.popleft()
+            for child in adjacency_list[new_value]:
+                indegree[child] -= 1
+                if indegree[child] == 0:
+                    queue.append(child)
+                    
         for i in range(len(indegree)):
-            if indegree[i]!=0:
+            if indegree[i] != 0:
                 return False
         return True
-    
-    
-    
-        
+            
