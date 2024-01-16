@@ -6,6 +6,9 @@
 #         self.right = right
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+        # APPROACH --> RECURSION
+        # TIME COMPLEXITY --> O(N)
+        # SPACE COMPLEXITY --> O(N)
         if not preorder and not inorder:
             return None
         root = TreeNode(preorder[0])
