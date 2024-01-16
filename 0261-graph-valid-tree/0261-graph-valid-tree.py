@@ -1,5 +1,8 @@
 class Solution:
     def validTree(self, n: int, edges: List[List[int]]) -> bool:
+        # APPROACH --> BFS
+        # TIME COMPLEXITY --> O(E + N), E --> EDGES, n --> NODES
+        # SPACE COMPLEXITY --> O(E + N)
         if len(edges) != n - 1:
             return False
         
