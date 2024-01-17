@@ -16,8 +16,12 @@ class Solution:
                 x = x // 10
             reversed_number = -1 * reversed_number
         
-        if -2**31 <= reversed_number <= 2**31 - 1:
-            res = reversed_number
-        else:
+        # if -2**31 <= reversed_number <= 2**31 - 1:
+        #     res = reversed_number
+        # else:
+        #     res = 0
+        if reversed_number.bit_length() > 31:
             res = 0
+        else:
+            res = reversed_number
         return res
