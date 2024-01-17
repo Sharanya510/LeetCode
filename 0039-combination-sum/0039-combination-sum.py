@@ -1,17 +1,27 @@
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        def dfs(i, temp, total):
-            if total == target:
-                res.append(list(temp))
-                return
-            if i >= len(candidates) or total > target:
-                return
-            temp.append(candidates[i])
-            dfs(i, temp, total + candidates[i])
-            temp.pop()
-            dfs(i+1, temp, total)
+        if target == 0:
+            return []
         
-        res = []
-        temp = []
-        dfs(0, temp, 0)
-        return res
+        # quit if we went out of bounds
+        if target < 0:
+            return None
+        out = []
+        
+        # two cases here:
+        # if a candidate is the target add to solutions 
+        # since everything after will be beyond the sum
+        # if < target : get combinations on target-cur_candidate,
+        # then merge each solution with the cur_candidate
+
+        for i in range(len(candidates)):
+            candidate = candidates[i]
+            if candidate == target:
+                out.append([candidate])
+
+            if candidate < target:
+                solutions = self.combinationSum(candidates[i:], target-candidate)
+                for solution in solutions:
+                    if solution is not None:
+                        out.append([candidate, *solution])
+        return out
