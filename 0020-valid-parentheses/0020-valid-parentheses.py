@@ -1,5 +1,7 @@
 class Solution:
     def isValid(self, s: str) -> bool:
+        # TIME COMPLEXITY --> O(N)
+        # SPACE COMPLEXITY --> O(N)
         stack_map = {'(': ')', '{': '}', '[': ']'}
         my_stack = []
         for c in s:
