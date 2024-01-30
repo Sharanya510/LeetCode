@@ -6,7 +6,7 @@ class Solution:
         longest = 0
         hash_map = {}
         left = 0
-        for right in range(left, len(s)):
+        for right in range(len(s)):
             if s[right] in hash_map:
                 hash_map[s[right]] += 1
             else:
