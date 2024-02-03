@@ -8,22 +8,34 @@ class Solution:
         # APPROACH 2 --> RECURSIVE
         # TIME COMPLEXITY --> O(N)
         # SPACE COMPLEXITY --> O(N)
-        if (not head) or (not head.next):
-            return head
-        p = self.reverseList(head.next)
-        head.next.next = head
-        head.next = None
-        return p
+#         if (not head) or (not head.next):
+#             return head
+#         p = self.reverseList(head.next)
+#         print(p)
+#         head.next.next = head
+#         head.next = None
+#         return p
         
         # APPROACH 1 --> ITERATIVE
         # TIME COMPLEXITY --> O(N)
         # SPACE COMPLEXITY --> O(1)
-        # curr = head
-        # temp = head
-        # prev = None
-        # while curr:
-        #     curr = curr.next
-        #     temp.next = prev
-        #     prev = temp
-        #     temp = curr
-        # return prev
+        curr = head
+        temp = head
+        prev = None
+        while curr:
+            curr = curr.next
+            temp.next = prev
+            prev = temp
+            temp = curr
+        return prev
+        
+# None   <-- 1     <-- 2     <-- 3      <-- 4       5
+#                                              curr
+#                                                temp
+#                                       prev
+
+# temp.next = prev
+# 1 --> None
+
+# prev = temp
+# temp = curr
