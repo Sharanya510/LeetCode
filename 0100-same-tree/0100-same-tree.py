@@ -15,7 +15,7 @@ class Solution:
             p_node, q_node = queue.popleft()
             if not self.check(p_node, q_node):
                 return False
-            if p_node or q_node:
+            if p_node:
                 queue.append((p_node.left, q_node.left))
                 queue.append((p_node.right, q_node.right))
         return True
