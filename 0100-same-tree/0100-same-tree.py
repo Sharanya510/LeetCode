@@ -9,13 +9,15 @@ class Solution:
         # APPROACH --> ITERATIVE
         # TIME COMPLEXITY --> O(N)
         # SPACE COMPLEXITY --> O(N)
+        if not p and not q:
+            return True
         queue = deque()
         queue.append((p,q))
         while queue:
             p_node, q_node = queue.popleft()
             if not self.check(p_node, q_node):
                 return False
-            if p_node:
+            if p_node or q_node:
                 queue.append((p_node.left, q_node.left))
                 queue.append((p_node.right, q_node.right))
         return True
@@ -39,4 +41,10 @@ class Solution:
         # if p.val != q.val:
         #     return False
         # return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
-            
+        
+        
+        
+        
+        
+        
+        
