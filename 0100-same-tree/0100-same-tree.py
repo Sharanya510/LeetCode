@@ -13,7 +13,7 @@ class Solution:
         queue.append((p,q))
         while queue:
             p_node, q_node = queue.popleft()
-            if not self.check(p_node, q_node):
+            if self.check(p_node, q_node) is False:
                 return False
             if p_node:
                 queue.append((p_node.left, q_node.left))
