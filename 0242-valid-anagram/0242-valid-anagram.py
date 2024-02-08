@@ -1,16 +1,17 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        # APPROACH 4 --> USING COUNTER
+        # TIME COMPLEXITY --> O(n)
+        # SPACE COMPLEXITY --> O(1)
         if len(s) != len(t):
             return False
-        count = [0]* 26
+        countS, countT = [0]* 26, [0]*26
         for i in range(len(s)):
-            count[ord(s[i]) - ord('a')] += 1
-            count[ord(t[i]) - ord('a')] -= 1
-        for j in count:
-            if j != 0:
-                return False
-        return True
+            countS[ord(s[i]) - ord('a')] += 1
+            countT[ord(t[i]) - ord('a')] += 1
+        return countS == countT
         
+
         
         
         # APPROACH 3 --> USING GET FUNCTION, SIMPLIFIED CODE
