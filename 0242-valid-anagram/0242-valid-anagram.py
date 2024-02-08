@@ -11,9 +11,6 @@ class Solution:
             countT[ord(t[i]) - ord('a')] += 1
         return countS == countT
         
-
-        
-        
         # APPROACH 3 --> USING GET FUNCTION, SIMPLIFIED CODE
         # TIME COMPLEXITY --> O(n)
         # SPACE COMPLEXITY --> O(n)
