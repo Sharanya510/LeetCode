@@ -1,20 +1,29 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        # if n == 1:
-        #     return 1
-        # if n == 2:
-        #     return 2
-        # a = 1
-        # b = 2
-        # c = 0
-        # for i in range(n-2):
-        #     c = a+ b
-        #     a = b
-        #     b = c
-        # return c
+        if n == 1: return 1
+        if n == 2: return 2
+        dp = [0]  * (n + 1)
+        dp[1] = 1
+        dp[2] = 2
+        for i in range(3, n+1):
+            dp[i] = dp[i - 1] + dp[i - 2]
+        return dp[n]
         
-        x, y = 1, 1
-        for i in range(2, n + 1):
-            x, y = y, x+ y
-        return y
+        
+        
+        
+#         return self.helper(n)
     
+#     def helper(self, n):
+#         if n == 1:
+#             return 1
+#         if n == 2:
+#             return 2
+#         if n <= 0:
+#             return 0
+#         return self.helper(n-1)+ self.helper(n-2)
+        
+        
+        
+        
+        
