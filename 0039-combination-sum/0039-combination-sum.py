@@ -1,27 +1,23 @@
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        if target == 0:
-            return []
-        
-        # quit if we went out of bounds
-        if target < 0:
+        if len(candidates) == 0:
             return None
-        out = []
+        path = []
+        res = []
+        self.helper(candidates, target, 0, path, res)
+        return res
+    
+    def helper(self, candidates, target, i, path, res):
+        if target < 0 or i == len(candidates):
+            return
+        if target == 0:
+            res.append(path[:])
+            return
+       
         
-        # two cases here:
-        # if a candidate is the target add to solutions 
-        # since everything after will be beyond the sum
-        # if < target : get combinations on target-cur_candidate,
-        # then merge each solution with the cur_candidate
-
-        for i in range(len(candidates)):
-            candidate = candidates[i]
-            if candidate == target:
-                out.append([candidate])
-
-            if candidate < target:
-                solutions = self.combinationSum(candidates[i:], target-candidate)
-                for solution in solutions:
-                    if solution is not None:
-                        out.append([candidate, *solution])
-        return out
+#       without choosing element
+        self.helper(candidates, target, i+1, path, res)
+        path.append(candidates[i])
+        
+        self.helper(candidates, target-candidates[i], i, path, res)
+        path.pop()
