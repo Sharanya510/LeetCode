@@ -24,4 +24,5 @@ class Solution:
                     return True
         return False
                 
-        
+# for BFS solution
+# checkout this link: https://leetcode.com/problems/word-search/discuss/2771262/Python-oror-Iterative-BFS
