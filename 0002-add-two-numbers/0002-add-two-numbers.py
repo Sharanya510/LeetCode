@@ -9,13 +9,13 @@ class Solution:
         curr = Dummy_Head
         carry = 0
         while l1 != None or l2 != None or carry != 0:
-            l1Val = l1.val if l1 else 0
-            l2Val = l2.val if l2 else 0
-            columnSum = l1Val + l2Val + carry
+            l1_val = l1.val if l1 else 0
+            l2_val = l2.val if l2 else 0
+            columnSum = l1_val + l2_val + carry
             carry = columnSum // 10
-            newNode = ListNode(columnSum % 10)
-            curr.next = newNode
-            curr = newNode
+            nextNode = ListNode(columnSum % 10)
+            curr.next = nextNode
+            curr = nextNode
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
         return Dummy_Head.next
