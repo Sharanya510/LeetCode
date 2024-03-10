@@ -16,15 +16,16 @@ class Solution:
                         counter -= 1
                     hash_map[left_char] -= 1
                     left += 1
+                    
+                    
             max_length = max(max_length, right - left + 1)
         return max_length
-                        
-                        
+                
+                
 # a   b   c   a   b   c   b   b
-# r   
 # l
+# r
 #     r
 #         r
 #             r
-    
-                
+            
