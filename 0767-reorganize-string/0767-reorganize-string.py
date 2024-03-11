@@ -1,5 +1,8 @@
 class Solution:
     def reorganizeString(self, s: str) -> str:
+        # APPROACH --> COUNTING & PLACING ODD/EVEN
+        # TIME COMPLEXITY --> O(N)
+        # SPACE COMPLEXITY --> O(k)
         char_counts = Counter(s)
         max_count , letter = 0, ''
         for char, count in char_counts.items():
