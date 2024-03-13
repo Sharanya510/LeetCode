@@ -24,7 +24,7 @@ class MyHashMap:
                     break
                 else:
                     curr = curr.next
-            curr.next = Node(key,value)
+            curr.next = Node(key, value)     
 
     def get(self, key: int) -> int:
         index = key % self.size
@@ -35,6 +35,7 @@ class MyHashMap:
             else:
                 curr = curr.next
         return -1
+            
 
     def remove(self, key: int) -> None:
         index = key % self.size
