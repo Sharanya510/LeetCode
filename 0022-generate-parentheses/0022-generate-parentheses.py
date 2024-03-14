@@ -12,13 +12,9 @@ class Solution:
             return 
         
         if (opencount < n):
-            # curr_string += "("
             self.backtrack(res, curr_string + "(", opencount + 1, closedcount, n)
-            # curr_string -= "("
             
         if (opencount > closedcount):
-            # curr_string += ")"
             self.backtrack(res, curr_string + ")", opencount, closedcount+1, n)
-            # curr_string -= ")"
         
         
