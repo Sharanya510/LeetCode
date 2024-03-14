@@ -15,4 +15,19 @@ class Solution:
             fast = fast.next.next
         temp.next = slow.next
         return head
+    
+# 1   3   4   7   1   2   6
+# s
+# f
+# t
+#     s
+#         f
+#     t
+#         s
+#                 f
+#         t
+#             s
+#                         f
+                
+
             
