@@ -16,7 +16,7 @@ class Solution:
                 posA = posA.next
                 lenA -= 1               
         elif (lenB - lenA > 0): 
-            while(  lenB != lenA):
+            while(lenB != lenA):
                 posB = posB.next
                 lenB -= 1
         
