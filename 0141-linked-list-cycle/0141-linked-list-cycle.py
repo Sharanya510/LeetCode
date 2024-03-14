@@ -30,3 +30,14 @@ class Solution:
         #     if slow == fast:
         #         return True
         # return False
+        
+        
+# 3   2   0   4
+# s
+# f
+#     s
+#         f
+#         s
+#     f
+#             s
+#             f
