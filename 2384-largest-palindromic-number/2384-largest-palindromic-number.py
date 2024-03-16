@@ -30,7 +30,7 @@ class Solution:
             for i in range(freq//2):
                 res.insert(0, str(num))
                 res.append(str(num))
-            
+                
         if not res:
             return "0"
         return "".join(res)
