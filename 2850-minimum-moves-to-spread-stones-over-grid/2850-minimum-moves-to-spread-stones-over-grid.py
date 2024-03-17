@@ -1,7 +1,6 @@
 class Solution:
     def minimumMoves(self, grid: List[List[int]]) -> int:
         extras, zeroes = defaultdict(int), []
-
         for row in range(3):
             for col in range(3):
                 if grid[row][col] > 1:
@@ -15,7 +14,6 @@ class Solution:
             return 0
         dist = inf
         curr_zero_x, curr_zero_y = zeroes[index]
-            
         for key, val in extras.items():
             if val > 1:
                 extras[key] -= 1
