@@ -7,7 +7,7 @@ class Solution:
         n = len(nums)
         window = SortedList()
         window_sum = 0
-        ans = math.inf
+        ans = float("inf")
 
         for end in range(1, n):
             incoming = nums[end]
