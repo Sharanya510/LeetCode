@@ -1,5 +1,8 @@
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
+        # APPROACH --> BFS
+        # TIME COMPLEXITY --> O(M x N)
+        # SPACE COMPLEXITY --> O(min(M, N))
         if not grid:
             return 0
         m = len(grid)
