@@ -17,6 +17,6 @@ class Solution:
         for key, val in extras.items():
             if val > 1:
                 extras[key] -= 1
-                dist = min(dist, self.backtrack(index + 1, zeroes, extras) + abs(curr_zero_x - key[0])+ abs(curr_zero_y - key[1]))
+                dist = min(dist, self.backtrack(index + 1, zeroes, extras) + abs(curr_zero_x - key[0]) + abs(curr_zero_y - key[1]))
                 extras[key] += 1
         return dist
