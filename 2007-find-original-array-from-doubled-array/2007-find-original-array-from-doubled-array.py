@@ -1,16 +1,17 @@
 class Solution:
     def findOriginalArray(self, changed: List[int]) -> List[int]:
-        c, res = Counter(changed), []
+        if len(changed) % 2 == 1:
+            return []
         changed.sort()
+        my_hashmap = Counter(changed)    
+        original = []
         for num in changed:
-            double = 2 * num
-            if double in c:
-                if (num and c[num] >= 1) or (num == 0 and c[num] >= 1):
-                    c[num] -= 1
-                    c[double] -= 1
-                    res.append(num)
-        
-        for num in c:
-            if c[num] != 0:
-                return []
-        return res 
+            if my_hashmap[num] > 0 :
+                my_hashmap[num] -= 1
+                twiceNum = num * 2
+                if twiceNum in my_hashmap and my_hashmap[twiceNum] > 0:
+                    my_hashmap[twiceNum] -= 1
+                    original.append(num)
+                else:
+                    return []
+        return original
