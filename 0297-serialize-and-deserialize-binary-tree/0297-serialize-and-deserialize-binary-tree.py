@@ -37,9 +37,6 @@ class Codec:
         return helper(data_list)
         
 # 1,2,None,None,3,4,None,None,5,None,None,
-
-
-
 # Your Codec object will be instantiated and called as such:
 # ser = Codec()
 # deser = Codec()
