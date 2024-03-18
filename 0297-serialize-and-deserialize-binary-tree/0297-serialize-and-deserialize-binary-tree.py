@@ -11,11 +11,6 @@ class Codec:
         self.res=""
         
     def serialize(self, root):
-        """Encodes a tree to a single string.
-        
-        :type root: TreeNode
-        :rtype: str
-        """
         if root is None:
             self.res+="None,"
         else: 
@@ -27,11 +22,6 @@ class Codec:
         
 
     def deserialize(self, data):
-        """Decodes your encoded data to tree.
-        
-        :type data: str
-        :rtype: TreeNode
-        """
         def helper(data_list):
             node=data_list.pop(0)
             if node=='None':
