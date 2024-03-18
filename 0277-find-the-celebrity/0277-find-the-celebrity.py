@@ -7,7 +7,7 @@ class Solution:
         # APPROACH --> BRUTE FORCE
         numberofpeople = n
         for i in range(n):
-            if self.isCelebrity(i, numberofpeople ):
+            if self.isCelebrity(i, numberofpeople):
                 return i
         return -1
     
