@@ -1,27 +1,13 @@
 class Solution:
     def arrangeCoins(self, n: int) -> int:
-        #LINEAR-SEARCH
-        # rows = 1
-        # while (rows < n):
-        #     n = n - rows
-        #     rows = rows +1
-        # return rows-1
-
-        #BINARY-SEARCH
-        left, right = 0, n+1
+        left, right = 0, n
         while left <= right:
-            
-            middle = (left + right)//2
-            
-            if (middle*(middle +1))/2 > n:
-                right = middle -1
-            
-            elif (middle*(middle +1))/2 < n:
-                left = middle + 1
-            
+            k = (right + left) // 2
+            curr = k * (k + 1) // 2
+            if curr == n:
+                return k
+            if n < curr:
+                right = k - 1
             else:
-                return middle
-        
-        return left-1
-
-        
+                left = k + 1
+        return right
