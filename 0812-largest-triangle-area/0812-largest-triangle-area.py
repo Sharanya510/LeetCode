@@ -10,5 +10,4 @@ class Solution:
 
         for p1, p2, p3 in combinations(points, 3):
             max_area = max(max_area, calculate_area(p1, p2, p3))
-
         return max_area
