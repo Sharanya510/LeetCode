@@ -16,7 +16,7 @@ class Solution:
             size = len(queue)
             flag = False
             for i in range(size):
-                node,parent = queue.popleft()
+                node, parent = queue.popleft()
                 if node.val == x or node.val == y:
                     if not flag:
                         flag=True
