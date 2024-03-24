@@ -11,7 +11,7 @@ class MinStack:
             self.min_stack.append(val)
 
     def pop(self) -> None:
-        if self.main_stack:
+        if len(self.main_stack) != 0:
             value = self.main_stack[-1]
             if self.min_stack and value == self.min_stack[-1]:
                 self.main_stack.pop()
