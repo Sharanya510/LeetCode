@@ -16,7 +16,7 @@ class Solution:
                 if r+x >= 0 and c+y >= 0 and r+x<ROWS and c+y<COLS and rooms[r+x][c+y] == 2147483647:
                     nextStack.append((r+x,c+y))
                     rooms[r+x][c+y] = level
-            if stack == [] and nextStack != []:
+            if len(stack) == 0 and len(nextStack) != 0:
                 stack = nextStack
                 nextStack = []
                 level += 1
