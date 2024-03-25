@@ -19,7 +19,7 @@ class Solution:
         for i in range(len(indegree)):
             if indegree[i] == 1:
                 queue.append(i)
-                
+        # print(queue)
         while queue:
             parent = queue.popleft()
             for child in adjacency_list[parent]:
