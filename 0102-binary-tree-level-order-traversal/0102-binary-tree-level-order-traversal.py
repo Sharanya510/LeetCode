@@ -6,6 +6,9 @@
 #         self.right = right
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        # APPROACH --> RECURSION
+        # TIME COMPLEXITY --> O(N)
+        # SPACE COMPLEXITY --> O(N)
         res = []
         if not root:
             return res
