@@ -1,5 +1,8 @@
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        # APPROACH --> DFS
+        # TIME COMPLEXITY --> O(M + N)
+        # SPACE COMPLEXITY --> O(M + N)
         if not prerequisites:
             return True
         
