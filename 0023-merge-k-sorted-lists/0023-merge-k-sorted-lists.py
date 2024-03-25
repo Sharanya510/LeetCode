@@ -17,7 +17,7 @@ class Solution(object):
         for l in lists:
             if l:
                 heapq.heappush(heap, (l.val, l))
-        
+        # print(heap)
         dummy_node = ListNode(-1)
         
         curr = dummy_node
@@ -29,5 +29,6 @@ class Solution(object):
             node = node.next
             if node:
                 heapq.heappush(heap, (node.val, node))
+            # print(heap)
         return dummy_node.next
         
