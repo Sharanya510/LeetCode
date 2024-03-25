@@ -1,7 +1,7 @@
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         stack = []
-        operators = {"+",  "-", "/", "*"}
+        operators = ["+",  "-", "/", "*"]
         for token in tokens:
             if token not in operators:
                 num = int(token)
