@@ -6,6 +6,9 @@
 #         self.right = right
 class Solution:
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+        # APPROACH --> RECURSIVE
+        # TIME COMPLEXITY -->O(MN)
+        # SPACE COMPLEXITY --> O(N+M)
         if not subRoot:
             return True
         if not root:
