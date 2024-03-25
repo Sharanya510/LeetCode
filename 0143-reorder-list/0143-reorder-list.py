@@ -8,6 +8,9 @@ class Solution:
         """
         Do not return anything, modify head in-place instead.
         """
+        # APPROACH --> ITERATIVE
+        # TIME COMPLEXITY --> O(N)
+        # SPACE COMPLEXITY --> O(1)
         first_node = head
         mid_point = self.mid(first_node)
         second_head = self.reverse(mid_point.next)
