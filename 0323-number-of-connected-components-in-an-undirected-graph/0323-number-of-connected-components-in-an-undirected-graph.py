@@ -1,5 +1,8 @@
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
+        # APPROACH --> BFS
+        # TIME COMPLEXITY --> O(E + V) E --> edges, V --> vertices
+        # SPACE COMPLEXITY --> O(E + V)
         self.adjacency_list = defaultdict(list)
         self.visited = set()
         count = 0
