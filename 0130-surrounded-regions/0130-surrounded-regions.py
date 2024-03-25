@@ -1,8 +1,5 @@
 class Solution:
     def solve(self, board: List[List[str]]) -> None:
-        """
-        Do not return anything, modify board in-place instead.
-        """
         if not board:
             return
         
@@ -37,6 +34,3 @@ class Solution:
                 if (i,j) not in visited and board[i][j] == "O":
                     board[i][j] = "X"
         return board
-                    
-                
-        
