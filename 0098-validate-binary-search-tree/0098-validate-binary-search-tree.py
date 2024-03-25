@@ -15,7 +15,7 @@ class Solution:
         max_value = float("inf")
         
         my_stack = [(root, min_value, max_value)]
-        while my_stack:
+        while len(my_stack) != 0:
             root, lower, upper = my_stack.pop()
             if not root:
                 continue
