@@ -6,7 +6,7 @@ class Solution:
             position = num// 10 % 10
             value = num % 10
             dic[(depth,position)] = value
-        root = (nums[0]//100,nums[0]%100//10)
+        root = (nums[0]//100,nums[0]// 10 % 10)
         stack =[(root,0)]
         ans = 0
         while stack:
