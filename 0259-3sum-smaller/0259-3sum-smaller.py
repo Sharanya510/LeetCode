@@ -14,7 +14,6 @@ class Solution:
                 elif a + b + c < target:
                     count += k - j
                     j += 1
-                    print(a, b, c)
         return count
 
 # [3,1,0,-2]
