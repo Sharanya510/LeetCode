@@ -1,32 +1,26 @@
 class Solution:
     def minInsertions(self, s: str) -> int:
-        # Initialize counters for the number of insertions 
-        # required and the balance of open parentheses
-        insertions, balance = 0, 0
-        i = 0
-        while i < len(s):
-            if s[i] == '(':
-                # Increase balance for each open parenthesis
-                balance += 1
-            else:  # s[i] == ')'
-                if i + 1 < len(s) and s[i + 1] == ')':
-                    # If there's a consecutive closing parenthesis, 
-                    # match it with an open parenthesis if available
-                    if balance > 0:
-                        balance -= 1
-                    else:
-                        # If no open parenthesis is available, an insertion is needed
-                        insertions += 1
-                    i += 1  # Skip the next character since it's paired with the current one
+         # Replace every '))' with a placeholder '#'
+        s = s.replace('))', '#')
+
+        missing = 0  # Tracks the number of insertions needed
+        required = 0  # Tracks the required number of ')' to balance '('
+
+        # Iterate through each character in the modified string
+        for c in s:
+            if c == '(':
+                # Each '(' increases the required ')' count by 2
+                required += 2
+            else:  # Handle ')' or '#'
+                if c == ')':
+                    # Single ')' found, increment missing
+                    missing += 1
+                # Adjust required count based on available ')'
+                if required > 0:
+                    required -= 2
                 else:
-                    # If there's no consecutive closing parenthesis, 
-                    # we need an extra insertion for balancing
-                    if balance > 0:
-                        balance -= 1
-                    else:
-                        insertions += 1
-                    insertions += 1  # Additional insertion for the missing ')'
-            i += 1
-        # Each unbalanced '(' requires two ')' to balance out
-        insertions += balance * 2
-        return insertions
+                    # If no '(' to match, increase missing for balancing
+                    missing += 1
+        
+        # Return total insertions needed: unpaired ')' + remaining required ')'
+        return missing + required
