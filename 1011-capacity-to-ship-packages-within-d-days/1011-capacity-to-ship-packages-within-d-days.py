@@ -1,25 +1,21 @@
 class Solution:
     def shipWithinDays(self, weights: List[int], days: int) -> int:
-        low, high = max(weights), sum(weights)
-        res = high
-
-        def CanShip(mid):
-            ships, capacity = 1, mid
-            for w in weights:
-                if capacity - w < 0:
-                    ships += 1
-                    capacity = mid
-                capacity -= w
-            return ships <= days
-            
-                    
-        while low <= high :
-            mid = (low + high) // 2
-            if CanShip(mid):
-                res = min(mid, res)
-                high = mid - 1
+        left, right = max(weights), sum(weights)
+        while left + 1 < right:
+            mid = (left + right) // 2
+            if self.split_work(weights, mid) <= days:
+                right = mid
             else:
-                low = mid + 1
-        return res
+                left = mid
+        if self.split_work(weights, left) <= days:
+            return left
+        return right
         
-            
+    def split_work(self, weights, ship_size):
+        work, days = 0, 0
+        for weight in weights:
+            if work + weight > ship_size:
+                days += 1
+                work = 0
+            work += weight
+        return days + 1
