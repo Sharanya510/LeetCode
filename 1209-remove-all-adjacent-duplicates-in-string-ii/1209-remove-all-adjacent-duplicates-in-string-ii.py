@@ -1,23 +1,16 @@
 class Solution:
     def removeDuplicates(self, s: str, k: int) -> str:
-        counts = []  # Stack to keep track of the counts of consecutive characters
-        sa = list(s)  # Convert the string to a list for mutable operations
-        j = 0  # Pointer for placing the next character in the 'compressed' version of the list
-
-        for i in range(len(s)):
-            sa[j] = sa[i]
-            if j == 0 or sa[j] != sa[j - 1]:
-                counts.append(1)
-            else:
-                incremented = counts.pop() + 1
-                if incremented == k:
-                    j -= k  # Remove k characters by moving j back k positions
-                else:
-                    counts.append(incremented)
-            j += 1  # Increment j for the next unique character or sequence
-
-        return ''.join(sa[:j])
+        stck = []    
         
+        for c in s:                            
+            if stck and stck[-1][0] == c: # check if stack is not empty
+                stck[-1][1]+=1
+                if stck[-1][1] == k:
+                    stck.pop()
+            else:
+                stck.append([c, 1])            
+        
+        return ''.join(c * cnt for c, cnt in stck)
         
 #         left = 0
 #         right = left + 1
@@ -36,5 +29,6 @@ class Solution:
 #                     s = s[:left] + s[right+1:]
 #                     left, right = 0, 1
 #         return s
-        
+
+        # len(s[left:right+1])
     
