@@ -23,5 +23,8 @@ class Solution:
                 col_origin = col
                 dfs(row, col)
                 if current_island:
-                    unique_islands.add(frozenset(current_island))
+                    # print(unique_islands)
+                    # unique_islands.add(frozenset(current_island))
+                    unique_islands.add(tuple(current_island))
+                    # print(unique_islands)
         return len(unique_islands)
