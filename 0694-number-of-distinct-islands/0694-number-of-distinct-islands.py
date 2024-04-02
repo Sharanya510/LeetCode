@@ -4,7 +4,7 @@ class Solution:
         def dfs(row, col):
             if row < 0 or col < 0 or row >= len(grid) or col >= len(grid[0]):
                 return
-            if (row, col) in seen or not grid[row][col]:
+            if (row, col) in seen or grid[row][col] == 0:
                 return
             seen.add((row, col))
             current_island.add((row - row_origin, col - col_origin))
@@ -18,10 +18,11 @@ class Solution:
         unique_islands = set()
         for row in range(len(grid)):
             for col in range(len(grid[0])):
-                current_island = set()
-                row_origin = row
-                col_origin = col
-                dfs(row, col)
-                if current_island:
-                    unique_islands.add(tuple(current_island))
+                if grid[row][col] == 1:
+                    current_island = set()
+                    row_origin = row
+                    col_origin = col
+                    dfs(row, col)
+                    if current_island:
+                        unique_islands.add(tuple(current_island))
         return len(unique_islands)
