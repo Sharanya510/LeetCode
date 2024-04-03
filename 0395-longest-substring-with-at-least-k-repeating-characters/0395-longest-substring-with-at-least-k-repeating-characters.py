@@ -1,38 +1,16 @@
 class Solution:
     def longestSubstring(self, s: str, k: int) -> int:
-        def getMaxUniqueLetters(s):
-            return len(set(s))
-
-        maxUnique = getMaxUniqueLetters(s)
-        result = 0
-        for currUnique in range(1, maxUnique + 1):
-            # Reset countMap
-            countMap = [0] * 26
-            windowStart, windowEnd = 0, 0
-            unique, countAtLeastK = 0, 0
-            while windowEnd < len(s):
-                # Expand the sliding window
-                if unique <= currUnique:
-                    idx = ord(s[windowEnd]) - ord('a')
-                    if countMap[idx] == 0:
-                        unique += 1
-                    countMap[idx] += 1
-                    if countMap[idx] == k:
-                        countAtLeastK += 1
-                    windowEnd += 1
-                # Shrink the sliding window
-                else:
-                    idx = ord(s[windowStart]) - ord('a')
-                    if countMap[idx] == k:
-                        countAtLeastK -= 1
-                    countMap[idx] -= 1
-                    if countMap[idx] == 0:
-                        unique -= 1
-                    windowStart += 1
-                if unique == currUnique and unique == countAtLeastK:
-                    result = max(windowEnd - windowStart, result)
-        return result
-        
+        S = Counter(s)
+        if len(s) == 0 or k > len(s): return 0
+        sub1, sub2 = 0, 0
+        for i, ele in enumerate(s):
+            if S[ele] < k:
+                sub1 = self.longestSubstring(s[:i], k)
+                sub2 = self.longestSubstring(s[i+1:], k)
+                break
+        else:
+            return len(s)
+        return max(sub1, sub2)
         
         
         
