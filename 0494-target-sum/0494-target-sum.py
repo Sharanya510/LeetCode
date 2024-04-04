@@ -14,7 +14,6 @@ class Solution:
                     dp[i][j + offset] += dp[i-1][j - nums[i-1] + offset]
                 if j + nums[i-1] + offset <= 2 * total_sum:
                     dp[i][j + offset] += dp[i-1][j + nums[i-1] + offset]
-
         return dp[len(nums)][target + offset]
     
         # APPROACH -- TOP DOWN -- RECURSIVE
