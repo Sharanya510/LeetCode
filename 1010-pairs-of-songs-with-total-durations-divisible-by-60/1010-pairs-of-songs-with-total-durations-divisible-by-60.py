@@ -8,6 +8,7 @@ class Solution:
             else: # check if a%60+b%60==60
                 ret += remainders[60-t%60]
             remainders[t % 60] += 1 # remember to update the remainders
+            # print(remainders)
         return ret
         
 # 30 --> 30 % 60 = 0
