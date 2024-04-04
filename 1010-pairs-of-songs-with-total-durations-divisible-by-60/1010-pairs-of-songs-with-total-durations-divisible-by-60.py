@@ -10,9 +10,7 @@ class Solution:
             remainders[t % 60] += 1 # remember to update the remainders
         return ret
         
-                
-            
-        
+# 30 --> 30 % 60 = 0
         
         # BRUTE FORCE -- TLE
         # count = 0
