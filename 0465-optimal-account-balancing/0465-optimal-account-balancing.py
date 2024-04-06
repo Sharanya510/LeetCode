@@ -9,7 +9,7 @@ class Solution:
         # print(balance_list)
         n = len(balance_list)
         def dfs(cur):
-            while cur < n and not balance_list[cur]:
+            while cur < n and balance_list[cur]==0:
                 cur += 1
             if cur == n:
                 return 0
