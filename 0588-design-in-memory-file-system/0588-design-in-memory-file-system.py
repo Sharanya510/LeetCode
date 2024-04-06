@@ -2,6 +2,7 @@ class Node:
     def __init__(self):
         self.children = collections.defaultdict(Node)
         self.content = ""
+        
 class FileSystem:
 
     def __init__(self):
