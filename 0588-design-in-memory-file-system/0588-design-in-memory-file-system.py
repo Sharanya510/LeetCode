@@ -11,7 +11,8 @@ class FileSystem:
     def find(self, path):
         cur = self.root
         for i in path.split('/'):
-            if not i: continue
+            if not i: 
+                continue
             cur = cur.children[i]
         return cur
     
