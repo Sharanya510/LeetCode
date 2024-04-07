@@ -14,7 +14,7 @@ class Solution:
 
     def removeStones(self, stones):
         # Adjacency list to store edges
-        adj = [[] for _ in stones]
+        adj = defaultdict(list)
         
         for i in range(len(stones)):
             for j in range(i + 1, len(stones)):
