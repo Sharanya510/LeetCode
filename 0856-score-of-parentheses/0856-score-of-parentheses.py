@@ -11,3 +11,12 @@ class Solution:
                 mult //= 2
         return total
 
+# "()"
+# m = 2, t = 1
+
+# "(())"
+# m = 2, 
+# m = 4
+# t = 2
+
+# "()()"
