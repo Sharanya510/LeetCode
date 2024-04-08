@@ -24,7 +24,6 @@ class Solution:
 #         for i, n in enumerate(nums):
 #             res[i] = prefix
 #             prefix *= n
-            
 #         postfix = 1
 #         for i in range(len(nums)-1, -1, -1):
 #             res[i]*= postfix
