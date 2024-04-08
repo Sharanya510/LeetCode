@@ -7,9 +7,8 @@ class Solution:
         if mon in months:
             date_split_list[1] = months[mon]
         day = day[:-2]
-        if len(day) == 1: day = "0" + day
+        if len(day) == 1: 
+            day = "0" + day
         year = date_split_list[2]
         month = date_split_list[1]
         return f"{year}-{month}-{day}"
-        
-        
