@@ -32,5 +32,6 @@ class Solution:
                     while type(stack[-1]) == int:
                         curr += stack.pop()
                     previous_operator = stack.pop()
+            # print(stack)
 
         return sum(stack)
