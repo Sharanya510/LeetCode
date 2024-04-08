@@ -18,4 +18,5 @@ class Solution:
                 days += 1
                 work = 0
             work += weight
+        # print(days+1)
         return days + 1
