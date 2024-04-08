@@ -2,9 +2,8 @@ class Solution:
     def numDistinctIslands(self, grid: List[List[int]]) -> int:
         # Do a DFS to find all cells in the current island.
         def dfs(row, col):
-            if row < 0 or col < 0 or row >= len(grid) or col >= len(grid[0]) or (row, col) in seen or grid[row][col] == 0:
+            if row not in range(0, len(grid)) or col not in range(0, len(grid[0])) or (row, col) in seen or grid[row][col] == 0:
                 return
-            
             seen.add((row, col))
             current_island.add((row - row_origin, col - col_origin))
             dfs(row + 1, col)
