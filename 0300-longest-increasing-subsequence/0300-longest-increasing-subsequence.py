@@ -1,7 +1,6 @@
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
         sub = [nums[0]]
-        
         for num in nums[1:]:
             if num > sub[-1]:
                 sub.append(num)
@@ -11,8 +10,8 @@ class Solution:
                 while num > sub[i]:
                     i += 1
                 sub[i] = num
-
         return len(sub)
+    
 #         dp = [1] * len(nums)
 #         for i in range(1, len(nums)):
 #             for j in range(i):
