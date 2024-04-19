@@ -16,6 +16,7 @@ class Solution:
                 ans += distance * bounded_height
             st.append(current)
             current += 1
+            # print(st)
         return ans
         
         
