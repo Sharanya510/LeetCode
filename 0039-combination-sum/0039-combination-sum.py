@@ -20,7 +20,7 @@ class Solution:
       # without choosing element
         self.helper(candidates, target, i+1, path, res)
         path.append(candidates[i])
-        
+        # print(path)
         # with choosing element
         self.helper(candidates, target-candidates[i], i, path, res)
         path.pop()
