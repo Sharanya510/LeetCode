@@ -11,7 +11,6 @@ class Solution:
         queue = deque()
         queue.append(root)
         res = []
-        
         while queue:
             size = len(queue)
             for i in range(size):
