@@ -8,14 +8,14 @@ class Solution:
         # binary search
         left, right = 0, m * n - 1
         while left <= right:
-                pivot_idx = (left + right) // 2
+                mid = (left + right) // 2
                 # print(pivot_idx, pivot_idx // n, pivot_idx % n)
-                pivot_element = matrix[pivot_idx // n][pivot_idx % n]
+                pivot_element = matrix[mid // n][mid % n]
                 if target == pivot_element:
                     return True
                 else:
                     if target < pivot_element:
-                        right = pivot_idx - 1
+                        right = mid - 1
                     else:
-                        left = pivot_idx + 1
+                        left = mid + 1
         return False
