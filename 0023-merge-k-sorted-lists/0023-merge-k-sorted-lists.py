@@ -5,23 +5,15 @@
 #         self.next = next
 class Solution(object):
     def mergeKLists(self, lists):
-        """
-        :type lists: List[ListNode]
-        :rtype: ListNode
-        """
         if not lists:
             return None
-        
         heap = []
-        
         for l in lists:
             if l:
                 heapq.heappush(heap, (l.val, l))
         # print(heap)
         dummy_node = ListNode(-1)
-        
         curr = dummy_node
-        
         while heap:
             val, node = heapq.heappop(heap)
             curr.next = ListNode(val)
