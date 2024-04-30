@@ -3,8 +3,6 @@ class Solution:
         start, end = 0, len(nums)-1
         return self.helper(start, end, nums, target)
             
-         
-        
     def helper(self, start, end, nums, target):
         if start > end:
             return -1
