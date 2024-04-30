@@ -14,3 +14,18 @@ class Solution:
             current_width = len(heights) - stack[-1] - 1
             max_area = max(max_area, current_height * current_width)
         return max_area
+    
+# stack = [-1, 0]
+# curr = 2
+# width = 1-0-1 = 0
+# area = 0
+# stack = [-1]
+# i = 2
+# stack = [-1, 2]
+# i = 3
+# stack = [-1]
+# curr = 2
+# width = 3-2-1 = 0
+# area = 0
+# i = 4
+# stack = [-1, ]
