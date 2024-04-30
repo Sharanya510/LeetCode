@@ -6,6 +6,9 @@
 #         self.right = right
 class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+        # APPROACH --> ITERATIVE INORDER TRAVERSAL
+        # TIME COMPLEXITY --> O(H+k)
+        # SPACE COMPLEXITY --> O(H)
         my_stack = []
         while True:
             while root:
