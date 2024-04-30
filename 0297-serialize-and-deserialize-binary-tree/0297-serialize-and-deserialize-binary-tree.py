@@ -6,10 +6,8 @@
 #         self.right = None
 
 class Codec:
-
     def __init__(self):
         self.res=""
-        
     def serialize(self, root):
         if root is None:
             self.res+="None,"
@@ -19,8 +17,6 @@ class Codec:
             self.serialize(root.right)
         # print(self.res)
         return self.res
-        
-
     def deserialize(self, data):
         def helper(data_list):
             node=data_list.pop(0)
@@ -29,10 +25,7 @@ class Codec:
             root=TreeNode(int(node))
             root.left=helper(data_list)
             root.right=helper(data_list)
-            
             return root
-                
-        
         data_list=data.split(',')
         return helper(data_list)
         
