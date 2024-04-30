@@ -14,3 +14,23 @@ class Solution:
             fast = nums[fast]
         
         return slow
+    
+#     1   3   4   2   2
+#     0   1   2   3   4
+    
+#     slow = fast = 1
+#     slow = nums[1] = 3
+#     fast = nums[nums[1]] = nums[3] = 2
+#     next itertion
+#     slow = nums[3] = 2
+#     fast = nums[nums[2]] = nums[4] = 2
+#     slow == fast:
+#         break
+        
+#     slow = 1
+#     slow = nums[1] = 3
+#     fast = nums[2] = 4
+#     next iteration
+#     slow = nums[3] = 2
+#     fast = nums[4] = 2
+#     return slow 
