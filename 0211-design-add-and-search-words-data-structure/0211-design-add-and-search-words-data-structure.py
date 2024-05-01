@@ -19,13 +19,10 @@ class WordDictionary:
 
     def search(self, word: str) -> bool:
         node = self.root
-        
         def dfs(i, node):
             if i == len(word):
                 return node.isEnd
-
             c = word[i]
-
             if c == ".":
                 for child in node.children:
                     if child and dfs(i+1, child):
@@ -33,9 +30,7 @@ class WordDictionary:
             else:
                 if node.children[ord(c) - ord('a')] and dfs(i+1, node.children[ord(c) - ord('a')]):
                     return True
-
             return False
-
         return dfs(0, node)
 
 # Your WordDictionary object will be instantiated and called as such:
