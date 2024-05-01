@@ -2,7 +2,6 @@ class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
         if not grid:
             return 0
-        
         queue = deque()
         row = len(grid)
         col = len(grid[0])
