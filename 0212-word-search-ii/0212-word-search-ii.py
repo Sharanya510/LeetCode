@@ -9,7 +9,6 @@ class Trie:
         
     def insert(self, word):
         node = self.root
-        
         for c in word:
             if node.children[ord(c) - ord('a')] == None:
                 node.children[ord(c) - ord('a')] = TrieNode()
