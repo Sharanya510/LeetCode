@@ -4,9 +4,11 @@ class TrieNode():
         self.children = [None]*26
         
 class Trie:
-
     def __init__(self):
         self.root = TrieNode()
+        
+# TIME COMPLEXITY --> O(M)
+# SPACE COMPLEXITY --> O(M)
 
     def insert(self, word: str) -> None:
         node = self.root
@@ -16,6 +18,8 @@ class Trie:
             node = node.children[ord(char) -  ord('a')]
         node.isEnd = True
 
+# TIME COMPLEXITY --> O(M)
+# SPACE COMPLEXITY --> O(1)
     def search(self, word: str) -> bool:
         node = self.root
         for char in word:
@@ -27,6 +31,8 @@ class Trie:
             return True
         return False
 
+# TIME COMPLEXITY --> O(M)
+# SPACE COMPLEXITY --> O(1)
     def startsWith(self, prefix: str) -> bool:
         node = self.root
         for char in prefix:
