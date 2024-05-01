@@ -5,17 +5,14 @@ class Solution:
         # SPACE COMPLEXITY --> O(E + N)
         if len(edges) != n - 1:
             return False
-        
         indegree = [0]*n
         adjacency_list = defaultdict(list)
         queue = deque()
-        
         for edge in edges:
             adjacency_list[edge[0]].append(edge[1])
             adjacency_list[edge[1]].append(edge[0])
             indegree[edge[0]] += 1
             indegree[edge[1]] += 1
-            
         for i in range(len(indegree)):
             if indegree[i] == 1:
                 queue.append(i)
