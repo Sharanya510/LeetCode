@@ -9,7 +9,7 @@ class Solution:
         for edge in edges:
             self.adjacency_list[edge[0]].append(edge[1])
             self.adjacency_list[edge[1]].append(edge[0])
-        
+        # print(self.adjacency_list)
         for node in range(n):
             if node not in self.visited:
                 self.visited.add(node)
