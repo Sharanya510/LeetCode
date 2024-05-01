@@ -1,34 +1,20 @@
-class Solution:
-    def rotate(self, matrix: List[List[int]]) -> None:
-        """
-        Do not return anything, modify matrix in-place instead.
-        """
-        
-        self.transpose(matrix)
-        print(matrix)
-        self.reflect(matrix)
-        print(matrix)
-        # print(matrix[0][-1])
-    
-    def transpose(self, matrix):
-        n = len(matrix)
+class Solution(object):
+    def rotate(self, matrix):
+        n=len(matrix)
+        # print()
         for i in range(n):
-            for j in range(i + 1, n):
-                matrix[j][i], matrix[i][j] = matrix[i][j], matrix[j][i]
+            for j in range(i,n):
+                matrix[i][j],matrix[j][i]=matrix[j][i],matrix[i][j]
+        # print(matrix)
+       
+        for i in range(len(matrix)):
+            p1=0
+            p2=len(matrix)-1
+            while p1<=p2:
+                matrix[i][p1],matrix[i][p2]=matrix[i][p2],matrix[i][p1]
+                p1+=1
+                p2-=1
+        return matrix
+    
                 
-
-    def reflect(self, matrix):
-        n = len(matrix)
-        for i in range(n):
-            for j in range(n // 2):
-                matrix[i][j], matrix[i][-j - 1] = matrix[i][-j - 1], matrix[i][j]
-        
-    
-        
-        
-        
-
-        
-
-            
         
