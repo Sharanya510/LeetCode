@@ -3,7 +3,7 @@ class Solution:
         count = 0
         non_zero_elements = self.check_non_zeros(nums)
         while 0 not in non_zero_elements and len(non_zero_elements) > 0:
-            print(non_zero_elements)
+            # print(non_zero_elements)
             elements = self.ele_operation(non_zero_elements)
             count += 1
             non_zero_elements = self.check_non_zeros(elements)
