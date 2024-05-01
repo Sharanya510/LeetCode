@@ -1,5 +1,3 @@
-# from typing import List
-
 class Solution:
     def platesBetweenCandles(self, s: str, queries: List[List[int]]) -> List[int]:
         n = len(s)
@@ -13,6 +11,7 @@ class Solution:
             if s[i] == '|':
                 last_pipe_position = i
             left[i] = last_pipe_position
+        # print(left)
         
         # Update right array
         last_pipe_position = n
@@ -20,6 +19,7 @@ class Solution:
             if s[i] == '|':
                 last_pipe_position = i
             right[i] = last_pipe_position
+        # print(right)
         
         # Update prefix array
         for i in range(n):
@@ -27,10 +27,10 @@ class Solution:
                 prefix.append(1 + prefix[-1])
             else:
                 prefix.append(prefix[-1])
+        # print(prefix)
         
         ans = []
-        
-        for l, r in queries:
+        for l, r in queries: #l= 2, r = 5
             r = left[r]
             l = right[l]
             if l > r:
