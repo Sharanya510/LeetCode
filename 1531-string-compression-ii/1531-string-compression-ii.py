@@ -14,10 +14,7 @@ class Solution:
                 incr = 1 if prev_cnt in [1, 9, 99] else 0
                 res = incr + count(i + 1, k, prev, prev_cnt + 1)
             else:
-                res = min(
-                    count(i + 1, k - 1, prev, prev_cnt),
-                    1 + count(i + 1, k, s[i], 1)
-                )
+                res = min(count(i + 1, k - 1, prev, prev_cnt), 1 + count(i + 1, k, s[i], 1))
             cache[(i, k, prev, prev_cnt)] = res
             return res
 
