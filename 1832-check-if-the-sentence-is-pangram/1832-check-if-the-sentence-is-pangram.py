@@ -1,7 +1,6 @@
 from collections import Counter
 class Solution:
     def checkIfPangram(self, sentence: str) -> bool:
-        
         seen = [False] * 26
         for curr_char in sentence:
             seen[ord(curr_char) - ord('a')] = True
@@ -22,5 +21,6 @@ class Solution:
         #         return False
         # return True
     
+        # METHOD - 4
         # count = Counter(sentence)
         # return len(count) == 26
