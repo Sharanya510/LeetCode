@@ -12,5 +12,4 @@ class Solution:
         for i in range(x, x + 3):
             for j in range(y, y + 3):
                 max_element = max(max_element, grid[i][j])
-        
         return max_element
