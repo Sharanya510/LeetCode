@@ -6,11 +6,6 @@ class Solution:
             ans += counts[num]
             counts[num] += 1
         return ans
-            
-        
-        
-        
-        
         
         # BRUTE -- FORCE
         # TIME COMPLEXITY -- O(n2)
