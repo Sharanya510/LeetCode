@@ -1,14 +1,24 @@
 class Solution:
     def arithmeticTriplets(self, nums: List[int], diff: int) -> int:
+        num_set = set(nums)
         total_triplets = 0
-        n = len(nums)
-        for i in range(n):
-            for j in range(i+1, n):
-                if nums[j] - nums[i] == diff:
-                    for k in range(j+1, n):
-                        if nums[k] - nums[j] == diff:
-                            total_triplets += 1
+        
+        for num in nums:
+            if (num + diff in num_set) and (num + 2 * diff in num_set):
+                total_triplets += 1
+        
         return total_triplets
+        
+        # total_triplets = 0
+        # n = len(nums)
+        # for i in range(n):
+        #     for j in range(i+1, n):
+        #         if nums[j] - nums[i] == diff:
+        #             for k in range(j+1, n):
+        #                 if nums[k] - nums[j] == diff:
+        #                     total_triplets += 1
+        # return total_triplets
+    
         # total_triplets = 0
         # n = len(nums)
         # for i in range(n - 2):
