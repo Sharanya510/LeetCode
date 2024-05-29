@@ -5,7 +5,6 @@ class Solution:
         for i in range(N - 2):
             for j in range(N - 2):
                 max_local[i][j] = self.find_max(grid, i, j)
-        
         return max_local
     
     def find_max(self, grid, x, y):
