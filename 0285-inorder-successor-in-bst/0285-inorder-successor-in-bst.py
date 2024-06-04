@@ -30,4 +30,3 @@ class Solution:
             return
         self.previous = node
         self.inorderCase2(node.right, p)
-        
