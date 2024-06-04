@@ -13,12 +13,9 @@ class Solution:
             leftmost = p.right
             while leftmost.left:
                 leftmost = leftmost.left
-                
             self.inorder_successor_node = leftmost
-            
         else:
             self.inorderCase2(root, p)
-        
         return self.inorder_successor_node
     
     def inorderCase2(self, node: 'TreeNode', p: 'TreeNode'):
@@ -30,3 +27,4 @@ class Solution:
             return
         self.previous = node
         self.inorderCase2(node.right, p)
+        
