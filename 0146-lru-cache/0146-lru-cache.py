@@ -41,8 +41,6 @@ class LRUCache:
             self.add_to_head(node)
             #print("get key returns", key,node.value)
             return node.value
-            
-        
 
     def put(self, key: int, value: int) -> None:
         if key in self.hash_map:
@@ -58,13 +56,6 @@ class LRUCache:
                 self.add_to_head(self.hash_map[key])
             else:
                 self.add_to_head(self.hash_map[key])
-                
-                
-            
-        
-        
-        
-
 
 # Your LRUCache object will be instantiated and called as such:
 # obj = LRUCache(capacity)
