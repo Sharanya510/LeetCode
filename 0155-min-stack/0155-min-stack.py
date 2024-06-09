@@ -1,44 +1,35 @@
 class MinStack:
+
     def __init__(self):
-        self.main_stack = []
+        self.my_stack = []
         self.min_stack = []
-        self.minimum = float("inf")
-        
+        self.minValue = float("inf")
+
     def push(self, val: int) -> None:
-        self.main_stack.append(val)
-        if len(self.min_stack) == 0 or val <= self.minimum:
-            self.minimum = val
+        if len(self.my_stack) == 0 and len(self.min_stack) == 0:
+            self.minValue = val
             self.min_stack.append(val)
+        else:
+            self.minValue = min(val, self.min_stack[-1])
+            self.min_stack.append(self.minValue)
+        self.my_stack.append(val)
 
     def pop(self) -> None:
-        if len(self.main_stack) != 0:
-            if len(self.min_stack)!= 0 and self.main_stack[-1] == self.min_stack[-1]:
-                self.main_stack.pop()
-                self.min_stack.pop()
-            else:
-                self.main_stack.pop()
-        if len(self.min_stack) == 0:
-            self.minimum = float("inf")
+        if len(self.my_stack) > 0 and len(self.min_stack) > 0:
+            self.my_stack.pop()
+            self.min_stack.pop()
         else:
-            self.minimum = self.min_stack[-1]
+            return null
 
     def top(self) -> int:
-        if self.main_stack:
-            return self.main_stack[-1]
+        if len(self.my_stack) != 0:
+            return self.my_stack[-1]
 
     def getMin(self) -> int:
-        if self.min_stack:
+        if len(self.min_stack) != 0:
             return self.min_stack[-1]
 
-# ["MinStack","push","push","push","top","pop","getMin","pop","getMin","pop","push","top","getMin","push","top","getMin","pop","getMin"]
-# [[],[2147483646],[2147483646],[2147483647],[],[],[],[],[],[],[2147483647],[],[],[-2147483648],[],[],[],[]]
 
-# main --> [ 2147483646, 2147483646, 2147483647 ]
-# min --> [ 2147483646,  ]
-        
-        
-        
-        
 # Your MinStack object will be instantiated and called as such:
 # obj = MinStack()
 # obj.push(val)
