@@ -5,6 +5,7 @@ class Solution:
         for c in s1:
             s1_map[c]+=1
         counter=len(s1_map)
+        
         while end<len(s2):
             char=s2[end]
             if char in s1_map:
