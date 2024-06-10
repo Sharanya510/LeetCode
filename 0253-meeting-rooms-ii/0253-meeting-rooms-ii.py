@@ -1,6 +1,7 @@
 class Solution:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
         intervals.sort()
+        # print(intervals)
         heap = []
         heapq.heappush(heap, intervals[0][1])
         for i in range(1, len(intervals)):
