@@ -1,5 +1,23 @@
 class Solution:
     def minimumBuckets(self, hamsters: str) -> int:
+        n, visited = len(hamsters), set()
+
+        for i in range(n):
+            if hamsters[i] == "H":
+                if i-1 in visited or i+1 in visited:
+                    continue 
+                if i+1 < n and hamsters[i+1] == ".":
+                    visited.add(i+1)
+                elif i-1 >= 0 and hamsters[i-1] == ".":
+                    visited.add(i-1)
+                else:
+                    return -1 
+
+        return len(visited)
+        
+        
+        
+        
         # When we see a hamster
         # ASK:
         # Was it fed on the left :
@@ -8,19 +26,19 @@ class Solution:
         # if we cannot, return -1
         # Why should we feed a hamster on the right first?
         # Because the food can be reused to feed another hamster
-        count = 0
-        hamsters = list(hamsters)
-        for i in range(len(hamsters)):
-            if hamsters[i] != 'H': continue
-            if i - 1 >= 0 and hamsters[i - 1] == 'B':  # 'B' = bucket
-                continue
-            if i + 1 <= len(hamsters) - 1 and hamsters[i + 1] == '.':
-                # can be fed on the right
-                hamsters[i + 1] = 'B'
-                count += 1
-            elif i - 1 >= 0 and hamsters[i - 1] == '.':
-                count += 1
-            else:
-                return -1
+#         count = 0
+#         hamsters = list(hamsters)
+#         for i in range(len(hamsters)):
+#             if hamsters[i] != 'H': continue
+#             if i - 1 >= 0 and hamsters[i - 1] == 'B':  # 'B' = bucket
+#                 continue
+#             if i + 1 <= len(hamsters) - 1 and hamsters[i + 1] == '.':
+#                 # can be fed on the right
+#                 hamsters[i + 1] = 'B'
+#                 count += 1
+#             elif i - 1 >= 0 and hamsters[i - 1] == '.':
+#                 count += 1
+#             else:
+#                 return -1
 
-        return count
+#         return count
