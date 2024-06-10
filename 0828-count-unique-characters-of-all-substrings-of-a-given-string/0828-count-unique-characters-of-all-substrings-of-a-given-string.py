@@ -10,6 +10,7 @@ class Solution:
         total_count = 0
 
         for c, indexes in index.items():
+            # print(indexes)
             for i in range(len(indexes)):
                 left = indexes[i-1] if i > 0 else -1
                 right = indexes[i+1] if i < len(indexes)-1 else len(s)
