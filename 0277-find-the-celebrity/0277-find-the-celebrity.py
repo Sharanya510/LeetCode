@@ -15,13 +15,12 @@ class Solution:
                 return -1
         return celeb
         
-        # APPROACH --> BRUTE FORCE
+# APPROACH --> BRUTE FORCE
 #         numberofpeople = n
 #         for i in range(n):
 #             if self.isCelebrity(i, numberofpeople):
 #                 return i
 #         return -1
-    
 #     def isCelebrity(self, i, numberofpeople):
 #         for j in range(numberofpeople):
 #             if i == j:
