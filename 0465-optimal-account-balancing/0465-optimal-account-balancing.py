@@ -21,3 +21,4 @@ class Solution:
                     balance_list[nxt] -= balance_list[cur]
             return cost
         return dfs(0)
+    
