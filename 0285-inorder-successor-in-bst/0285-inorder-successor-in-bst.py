@@ -22,7 +22,7 @@ class Solution:
         if not node:
             return
         self.inorderCase2(node.left, p)
-        if self.previous == p and not self.inorder_successor_node:
+        if self.previous == p and self.inorder_successor_node == None:
             self.inorder_successor_node = node
             return
         self.previous = node
