@@ -1,27 +1,26 @@
 class Solution:
     def minimumBuckets(self, hamsters: str) -> int:
+        # When we see a hamster
+        # ASK:
+        # Was it fed on the left :
+        # If yes, move on
+        # if no, try to feed it on the right, than the left
+        # if we cannot, return -1
+        # Why should we feed a hamster on the right first?
+        # Because the food can be reused to feed another hamster
+        count = 0
         hamsters = list(hamsters)
-        foodCounter = 0
-        if not hamsters: 
-            return -1
-        for i in range(len(hamsters)): 
-            #If empty of food continue
-            if hamsters[i] != 'H': 
+        for i in range(len(hamsters)):
+            if hamsters[i] != 'H': continue
+            if i - 1 >= 0 and hamsters[i - 1] == 'B':  # 'B' = bucket
                 continue
-            #If left is hamster and right is h, return -1
-            if (i == 0 or hamsters[i-1] == 'H') and (i == len(hamsters)-1 or hamsters[i+1] == 'H'):
+            if i + 1 <= len(hamsters) - 1 and hamsters[i + 1] == '.':
+                # can be fed on the right
+                hamsters[i + 1] = 'B'
+                count += 1
+            elif i - 1 >= 0 and hamsters[i - 1] == '.':
+                count += 1
+            else:
                 return -1
-            # If left is food bucket, continue
-            if i > 0 and hamsters[i-1] == 'F': 
-                continue
-                   
-            # If left is empty or hampster and right is empty, put it to the right.
-            if (i == 0 or hamsters[i-1] != 'F') and i != len(hamsters)-1 and hamsters[i+1] == '.':
-                hamsters[i+1] = 'F'
-                foodCounter +=1 
-            # If left is empty and right is hamster, put it to the left
-            elif i > 0 and hamsters[i-1] == '.' and (i == len(hamsters)-1 or hamsters[i+1] == 'H'): 
-                hamsters[i-1] = 'F'
-                foodCounter +=1 
 
-        return foodCounter
+        return count
