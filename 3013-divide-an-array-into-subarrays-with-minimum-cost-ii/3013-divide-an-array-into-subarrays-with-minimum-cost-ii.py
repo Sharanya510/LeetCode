@@ -1,13 +1,10 @@
-# link to the problem: https://leetcode.com/problems/divide-an-array-into-subarrays-with-minimum-cost-ii/discuss/4605833/K-smallest-elements-in-Sliding-Window-w-SortedList-Detailed-Explanation
-
 from sortedcontainers import SortedList
-
 class Solution:
     def minimumCost(self, nums: List[int], k: int, dist: int) -> int:
         n = len(nums)
         window = SortedList()
         window_sum = 0
-        ans = float("inf")
+        ans = math.inf
 
         for end in range(1, n):
             incoming = nums[end]
