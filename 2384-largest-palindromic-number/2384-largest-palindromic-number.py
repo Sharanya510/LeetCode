@@ -1,36 +1,20 @@
-from collections import Counter
-
 class Solution:
     def largestPalindromic(self, num: str) -> str:
-        frequency = {}
-        largestOdd = float("-inf")
-        evens = [] #(value, frequency)
-        res = []
+        dic = Counter(num)
+        choice = '9876543210'
+        single = ''
+        res = ''
         
-        for n in num:
-            if int(n) not in frequency:
-                frequency[int(n)] = 0
-            frequency[int(n)] += 1
+		# first loop we can ignore '0'
+        for i in choice:
+            if i in dic and dic[i] % 2 == 1:
+                single = max(single,i)
+            res += i*(dic[i] // 2)
+        
+        res += single
+        
+        for i in choice[::-1]:
+            if i in dic:
+                res += i*(dic[i] // 2)
             
-        for key in frequency:
-            if key > largestOdd and frequency[key]%2 == 1:
-                largestOdd = key
-        
-        for key in frequency:
-            if frequency[key] > 1:
-                evens.append((key, frequency[key]))
-        evens.sort()
-        
-        if largestOdd != float('-inf'):
-            res.append(str(largestOdd))
-
-        for num, freq in evens:
-            if num == 0 and len(evens) == 1:
-                break
-            for i in range(freq//2):
-                res.insert(0, str(num))
-                res.append(str(num))
-                
-        if not res:
-            return "0"
-        return "".join(res)
+        return '0' if not res.strip('0') else res.strip('0')
