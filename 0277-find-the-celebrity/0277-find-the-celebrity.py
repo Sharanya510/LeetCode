@@ -5,18 +5,14 @@
 class Solution:
     def findCelebrity(self, n: int) -> int:
         celeb = 0
-
         for people in range(n):
             if knows(celeb, people):
                 celeb = people
-
         for people in range(n):
             if people == celeb:
                 continue;
-
             if (knows(celeb,people) or not knows(people, celeb)):
                 return -1
-
         return celeb
         
         # APPROACH --> BRUTE FORCE
