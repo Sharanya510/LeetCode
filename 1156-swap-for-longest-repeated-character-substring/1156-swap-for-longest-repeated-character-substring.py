@@ -7,8 +7,9 @@ class Solution:
             if text[r] != text[l]:
                 charMap[text[l]].append([l, r - l])
                 l = r
+        # print(charMap)
         charMap[text[-1]].append([l, r - l + 1])
-
+        # print(charMap)
         # corner case: if there is only one element -> return length of the text
         if len(charMap) == 1:
             return len(text)
