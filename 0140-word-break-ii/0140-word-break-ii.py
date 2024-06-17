@@ -7,6 +7,7 @@ class Solution:
                 queue = collections.deque()
                 queue.append([len(word), "{} ".format(word)])
                 seen.add("{} ".format(word))
+                # print(queue, seen)
                 while queue:
                     matched_length, sentence = queue.popleft()
                     if matched_length == len(s):
