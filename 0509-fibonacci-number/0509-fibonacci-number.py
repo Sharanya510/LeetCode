@@ -1,5 +1,6 @@
 class Solution:
     def fib(self, n: int) -> int:
+        # APPROACH -- DYNAMIC PROGRAMMING -- TOP DOWN -- RECURSIVE APPROACH
         if n < 2:
             return n
         memory = [0]*(n+1)
@@ -7,10 +8,7 @@ class Solution:
         memory[n] = self.fib(n-1) + self.fib(n-2)
         return memory[n]
         
-        
-        
-        
-        # APPROACH -- DYNAMIC PROGRAMMING -- BOTTOM UP
+        # APPROACH -- DYNAMIC PROGRAMMING -- BOTTOM UP -- ITERATIVE APPROACH
         # memory = [0] * (n+1)
         # if n < 2: 
         #     return n
