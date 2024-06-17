@@ -14,14 +14,10 @@ class Solution:
             return True
         if row < 0 or row >= len(board) or col < 0 or col >= len(board[0]) or board[row][col] != word[index] or (row, col) in visited:
             return False
-        
         visited.add((row, col))
-        
         res = (self.helper(board, word, row + 1, col, visited, index+1) or
         self.helper(board, word, row - 1, col, visited, index+1) or
         self.helper(board, word, row, col + 1, visited, index+1) or
         self.helper(board, word, row, col - 1, visited, index+1))
-        
         visited.remove((row, col))
-        
         return res
