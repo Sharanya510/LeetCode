@@ -3,17 +3,17 @@ class Solution:
         res = 0
         
         for i in range(32):
-            print(res)
+            # print(res)
             if n % 2 == 1:
                 res <<= 1
-                print("res value before: " ,res)
+                # print("res value before: " ,res)
                 res += 1
-                print("res value before: " ,res)
+                # print("res value before: " ,res)
             else:
                 res <<= 1
-            print("n value before: " ,n)
+            # print("n value before: " ,n)
             n >>= 1
-            print("n value after: " ,n)
+            # print("n value after: " ,n)
         return res
     
     
