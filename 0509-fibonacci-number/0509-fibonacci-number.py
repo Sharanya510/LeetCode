@@ -1,12 +1,23 @@
 class Solution:
     def fib(self, n: int) -> int:
-        memory = [0] * (n+1)
-        if n < 2: 
+        if n < 2:
             return n
+        memory = [0]*(n+1)
         memory[1] = 1
-        for num in range(2, n+1):
-            memory[num] = memory[num-1] + memory[num-2]
-        return memory[num]
+        memory[n] = self.fib(n-1) + self.fib(n-2)
+        return memory[n]
+        
+        
+        
+        
+        # APPROACH -- DYNAMIC PROGRAMMING -- BOTTOM UP
+        # memory = [0] * (n+1)
+        # if n < 2: 
+        #     return n
+        # memory[1] = 1
+        # for num in range(2, n+1):
+        #     memory[num] = memory[num-1] + memory[num-2]
+        # return memory[num]
 
         
         # APPROACH 1
