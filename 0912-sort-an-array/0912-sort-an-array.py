@@ -11,7 +11,7 @@ class Solution:
 
             index = 0
             # Place each element in its correct position in the array.
-            for val in range(minVal, maxVal + 1, 1):
+            for val in range(minVal, maxVal + 1):
                 # Append all 'val's together if they exist.
                 while counts.get(val, 0) > 0:
                     nums[index] = val
