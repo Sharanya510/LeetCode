@@ -6,8 +6,8 @@
 #         self.right = right
 # class Solution:
     # def findLeaves(self, root: Optional[TreeNode]) -> List[List[int]]:
-from typing import List, Tuple
-from collections import defaultdict
+# from typing import List, Tuple
+# from collections import defaultdict
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
