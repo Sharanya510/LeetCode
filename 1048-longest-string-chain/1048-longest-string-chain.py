@@ -1,5 +1,9 @@
 class Solution:
     def dfs(self, words, memo, current_word):
+        
+        #################################################
+        # TOP DOWN APPROACH + MEMOIZATION
+        #################################################
         # If the word is encountered previously, return its value from the memo (memoization).
         if current_word in memo:
             return memo[current_word]
