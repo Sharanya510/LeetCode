@@ -1,5 +1,8 @@
 class Solution:
     def longestLine(self, M: List[List[int]]) -> int:
+        ##########################################
+        # BRUTE FORCE APPROACH
+        ##########################################
         if not M:
             return 0
         
