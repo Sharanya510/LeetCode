@@ -4,16 +4,6 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-# class Solution:
-    # def findLeaves(self, root: Optional[TreeNode]) -> List[List[int]]:
-# from typing import List, Tuple
-# from collections import defaultdict
-
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
 
 class Solution:
     def __init__(self):
@@ -41,10 +31,10 @@ class Solution:
         self.pairs = []
         
         self.get_height(root)
-        
+        # print(self.pairs)
         # sort all the (height, val) pairs
         self.pairs.sort(key=lambda p: p[0])
-        
+        # print(self.pairs)
         solution = defaultdict(list)
         
         for height, val in self.pairs:
