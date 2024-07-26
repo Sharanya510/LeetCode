@@ -18,6 +18,7 @@ class Solution:
             min_diff = min(min_diff, minutes_list[i] - minutes_list[i - 1])
 
         # Calculate the difference between the first and last time point in a circular manner
+        # circular_diff = (1440 + minutes_list[0] - minutes_list[-1]) % 1440
         circular_diff = (1440 + minutes_list[0] - minutes_list[-1]) % 1440
         min_diff = min(min_diff, circular_diff)
 
