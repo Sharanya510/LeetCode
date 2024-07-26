@@ -4,14 +4,20 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+# class Solution:
+    # def findLeaves(self, root: Optional[TreeNode]) -> List[List[int]]:
+    
+# from typing import List
 
-################################################
-# DFS WITH SORTING SOLUTION
-################################################
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
 
 class Solution:
     def __init__(self):
-        self.pairs = []
+        self.solution = []
 
     def get_height(self, root: TreeNode) -> int:
         # return -1 for null nodes
@@ -22,26 +28,23 @@ class Solution:
         left_height = self.get_height(root.left)
         right_height = self.get_height(root.right)
         
-        # based on the height of the left and right children, obtain the height of the current (parent) node
+        # calculate the current node's height
         curr_height = max(left_height, right_height) + 1
-
-        # collect the pair -> (height, val)
-        self.pairs.append((curr_height, root.val))
-
-        # return the height of the current node
+        
+        # if the solution list is not big enough, add a new list for the current height
+        if len(self.solution) == curr_height:
+            self.solution.append([])
+        
+        # add the current node's value to the corresponding height list
+        self.solution[curr_height].append(root.val)
+        
         return curr_height
 
     def findLeaves(self, root: TreeNode) -> List[List[int]]:
-        self.pairs = []
+        self.solution = []
         
         self.get_height(root)
-        # print(self.pairs)
-        # sort all the (height, val) pairs
-        self.pairs.sort(key=lambda p: p[0])
-        # print(self.pairs)
-        solution = defaultdict(list)
         
-        for height, val in self.pairs:
-            solution[height].append(val)
+        return self.solution
+
         
-        return [solution[height] for height in sorted(solution.keys())]
