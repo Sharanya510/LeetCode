@@ -22,3 +22,6 @@ class Solution:
 
     # The number of times the sentence can fit is the number of complete rotations of the pointer
         return pointer // length
+    
+# TIME COMPLEXITY -- O(rows * cols)
+# SPACE COMPLEXITY -- O(L) L is the concatenated string with spaces 's'
