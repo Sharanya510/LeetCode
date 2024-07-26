@@ -23,3 +23,6 @@ class Solution:
         min_diff = min(min_diff, circular_diff)
 
         return min_diff
+    
+# TIME COMPLEXITY -- O(nlogn)
+# SPACE COMPLEXITY -- O(n)
