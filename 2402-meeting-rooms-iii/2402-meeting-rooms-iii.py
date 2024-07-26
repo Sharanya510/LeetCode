@@ -4,10 +4,10 @@ class Solution:
         heapify(unused_rooms)
         meeting_count = [0] * n
         for start, end in sorted(meetings):
-            while used_rooms and used_rooms[0][0] <= start:
+            while len(used_rooms) > 0 and used_rooms[0][0] <= start:
                 _, room = heappop(used_rooms)
                 heappush(unused_rooms, room)
-            if unused_rooms:
+            if len(unused_rooms) > 0:
                 room = heappop(unused_rooms)
                 heappush(used_rooms, [end, room])
             else:
